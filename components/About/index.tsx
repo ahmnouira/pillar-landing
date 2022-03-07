@@ -1,7 +1,7 @@
 import { Grid } from '@mui/material';
 import { PersonType } from 'types/person';
 import Person from './components/Person';
-import styles from './Pillar.module.scss';
+import styles from './About.module.scss';
 
 const people: PersonType[] = [
   {
@@ -25,17 +25,19 @@ const people: PersonType[] = [
 const About = () => {
   return (
     <section className={styles.about}>
-      <h6>OUR TEAM</h6>
-      <h3>About Us</h3>
-      <p className={styles['about-info']}>
-        A top-tier team deeply experienced in real estate, startups, and technology.
-      </p>
+      <div className={styles['about-header']}>
+        <h6>OUR TEAM</h6>
+        <h3>About Us</h3>
+        <p>A top-tier team deeply experienced in real estate, startups, and technology.</p>
+      </div>
       <div className={styles['about-content']}>
-        {people.map((person, index) => (
-          <Grid item xs={12} sm={6} lg={3} key={index}>
-            <Person person={person} styles={styles} />
-          </Grid>
-        ))}
+        <Grid container columnSpacing={2}>
+          {people.map((person, index) => (
+            <Grid item xs={12} sm={6} key={index}>
+              <Person person={person} styles={styles} />
+            </Grid>
+          ))}
+        </Grid>
       </div>
     </section>
   );

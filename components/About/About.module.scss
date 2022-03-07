@@ -1,36 +1,37 @@
 .about {
-  h3 {
-    padding: min(80px, 10%);
-    padding-bottom: 0;
-    margin-bottom: 16px;
-  }
+  background: #fafafa;
+  &-header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 72px 0px 24px;
 
-  .info {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
-    text-align: center;
-    color: #6e7176;
+    h3 {
+      margin: 16px 0;
+    }
+    > p {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      color: #6e7176;
+    }
   }
 
   &-content {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    padding: 0 min(80px, 10%);
-    padding-bottom: min(80px, 10%);
+    padding: 40px 80px 80px;
+    padding-bottom: 250px;
     .person-card {
       display: flex;
       flex-direction: row;
       align-items: flex-start;
+      width: 100%;
       padding: 16px;
       background: #ffffff;
       border: 1px solid #dbecee;
-      box-sizing: border-box;
       box-shadow: 0px 10px 24px rgba(0, 0, 0, 0.1);
       border-radius: 2px;
       min-height: 160px;
+      transition: all 0.5s;
       &-image {
         width: 86px;
         height: 86px;
@@ -42,21 +43,40 @@
         margin-left: 16px;
         display: flex;
         flex-direction: column;
+        align-items: flex-start;
         h4 {
           margin-bottom: 10px;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 24px;
         }
         &-role {
           background: #dbecee;
           border-radius: 4px;
           display: flex;
-          flex-direction: row;
-          align-items: center;
+          flex-direction: column;
+
           padding: 2px 8px;
           height: 20px;
+          min-height: 20px;
+          margin-bottom: 0.625rem;
           p {
             color: #00838f;
             text-transform: capitalize;
+            font-size: 12px;
+            line-height: 16px;
+            height: 20px;
           }
+        }
+        .description {
+          font-size: 14px;
+          line-height: 20px;
+        }
+        .show {
+          font-size: 14px;
+          line-height: 20px;
+          color: #00838f;
+          cursor: pointer;
         }
       }
     }

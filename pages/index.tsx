@@ -20,8 +20,9 @@ const Home: NextPage = () => {
   return (
     <MainLayout>
       <Banner imgSrc="/hero.jpg" />
-      <About />
       <Pillars />
+      <About />
+
       <CTA />
     </MainLayout>
   );

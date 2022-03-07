@@ -22,9 +22,7 @@ const Person: React.FC<Props> = ({ person, styles }) => {
           <p>{person.role}</p>
         </div>
         <p className={styles['description']}>{person.description}</p>
-        <div onClick={toggleShow}>
-          <p className={styles['show']}>{show ? '- Hide' : 'View more'}</p>
-        </div>
+        <p className={styles['show']}>{show ? '- Hide' : 'View more'}</p>
       </div>
     </div>
   );
