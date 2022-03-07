@@ -4,4 +4,5 @@ export type PersonType = {
   name: string;
   role: string;
   description: string;
+  fullDescription: string;
 };

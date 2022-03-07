@@ -8,17 +8,21 @@ const people: PersonType[] = [
     id: '1',
     avatar: '/people/1.png',
     description:
-      'Elementum egestas ac amet vitae urna gravida elementum. Quam in pulvinar nisl, gravida morbi. Massa venenatis fringilla vitae adipiscing mauris. With offices in Los Angeles and Denver, Beaufain identifies and manages multifamily in',
+      'Real estate fintech entrepreneur (LEX, Vistia), global macro investments (Pharo, Lehman Brothers), IU Kelley',
     name: 'Johan Strauss',
     role: 'ROLE LOREM',
+    fullDescription:
+      "Anthony Doming is an experienced fintech entrepreneur, most recently as the founding president of LEX Markets, the commercial real estate platform which executed the first-ever IPO of a single-asset commercial real estate security. Prior to that he founded a home financing fintech company, Vistia, which was acquired by a competitor in 2017. He previously worked in capital markets focused primarily on emerging markets investments in FX, rates, and credit (Pharo Management, Lehman Brothers). Steven is a graduate of Indiana University's Kelley School of Business and is a CFA charterholder.",
   },
   {
     id: '2',
     avatar: '/people/2.png',
     description:
-      'Elementum egestas ac amet vitae urna gravida elementum. Quam in pulvinar nisl, gravida morbi. Massa venenatis fringilla vitae adipiscing mauris. With offices in Los Angeles and Denver, Beaufain identifies and manages multifamily in',
+      'Institutional allocator (Purdue endowment, INPRS), real estate private equity (Strategic Capital, Lehman Brothers), IU Kelley ',
     name: 'Johan Strauss',
     role: 'ROLE LOREM',
+    fullDescription:
+      "Sanjay Patel has 20+ years' experience in real estate, initially working in his family's hotels while in high school, then as an institutional real estate private equity investor (Lehman Brothers, Strategic Capital Partners), and for the last 10 years as an institutional allocator ($30bn INPRS, $4bn Purdue University endowment). Throughout his professional career, Sanjay has also managed his family's investments in farmland, hotels, and multifamily assets. Sanjay is a graduate of Indiana University's Kelley School of Business and is a CAIA charterholder.",
   },
 ];
 
