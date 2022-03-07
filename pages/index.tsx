@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import CTA from 'components/CTA';
 import { useRouter } from 'next/router';
 import { handleMoveToId } from 'utils';
+import About from 'components/About';
 
 const Home: NextPage = () => {
   const router = useRouter();
@@ -19,6 +20,7 @@ const Home: NextPage = () => {
   return (
     <MainLayout>
       <Banner imgSrc="/hero.jpg" />
+      <About />
       <Pillars />
       <CTA />
     </MainLayout>
