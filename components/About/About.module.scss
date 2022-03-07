@@ -85,30 +85,24 @@
 
 @media screen and (max-width: 600px) {
   .about {
-    h3 {
-      padding: 24px;
-      padding-bottom: 0;
-      margin-bottom: 24px;
-    }
-    &-content {
+    background: #fff;
+    padding-bottom: 40px;
+    &-header {
+      margin: 16px;
       padding: 0;
-      .peron-card {
-        margin-left: 0;
-        margin-right: 0;
-        height: 50%;
-        &:hover {
-          box-shadow: none;
-          -webkit-box-shadow: none;
-          -moz-box-shadow: none;
-          transform: none;
-        }
-        &-text {
-          .description {
-            opacity: 1;
-            max-height: 1000px;
-          }
-        }
+      align-items: flex-start;
+      justify-content: flex-start;
+
+      h3 {
+        margin: 16px 0;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 30px;
       }
+    }
+
+    &-content {
+      padding: 0 24px;
     }
   }
 }

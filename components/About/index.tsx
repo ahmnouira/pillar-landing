@@ -35,9 +35,9 @@ const About = () => {
         <p>A top-tier team deeply experienced in real estate, startups, and technology.</p>
       </div>
       <div className={styles['about-content']}>
-        <Grid container columnSpacing={2}>
+        <Grid container columnSpacing={2} rowSpacing={2}>
           {people.map((person, index) => (
-            <Grid item xs={12} sm={6} key={index}>
+            <Grid item xs={12} sm={12} md={6} lg={6} key={index}>
               <Person person={person} styles={styles} />
             </Grid>
           ))}
