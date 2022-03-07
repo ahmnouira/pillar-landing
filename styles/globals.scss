@@ -1,0 +1,45 @@
+html,
+body {
+  scroll-behavior: smooth;
+  font-family: IBM Plex Sans !important;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box !important;
+}
+
+.padding-wrapper {
+  padding: 20px min(80px, 10%);
+  &.complete {
+    padding: min(80px, 10%);
+  }
+  &.policies {
+    padding-top: 100px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .padding-wrapper {
+    padding: 24px;
+    &.complete {
+      padding: 24px;
+    }
+    &.policies {
+      padding-top: 100px;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) and (orientation: landscape) {
+  .padding-wrapper {
+    padding: 24px;
+    &.complete {
+      padding: 24px;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+.cta {
+  background-color: #2a5865;
+  color: white;
+  &-content {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: min(80px, 10%);
+    justify-content: center;
+    align-items: flex-start;
+    &-part {
+      flex: 0.5;
+      margin: 0 min(40px, 5%);
+      .ui-button {
+        width: auto;
+      }
+      p {
+        margin-top: 8px;
+        line-height: 21.6px;
+        font-size: 16px;
+        &.small {
+          margin-top: 13.5px;
+          line-height: 13.5px;
+          color: rgba(255, 255, 255, 0.4);
+          font-size: 10px;
+          a {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .cta {
+    &-content {
+      padding: 24px;
+      &-part {
+        flex: auto;
+        margin: 0;
+      }
+    }
+  }
+}

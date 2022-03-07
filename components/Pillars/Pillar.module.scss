@@ -1,0 +1,103 @@
+.pillars {
+  h3 {
+    padding: min(80px, 10%);
+    padding-bottom: 0;
+    margin-bottom: 40px;
+  }
+  &-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 0 min(80px, 10%);
+    padding-bottom: min(80px, 10%);
+    .pillar-card {
+      position: relative;
+      transition: all 0.5s ease-in-out;
+      transform: none;
+      margin-left: 10px;
+      margin-bottom: 4px;
+      // cursor: pointer;
+      margin-right: 2px;
+      border-radius: 4px;
+      background: black;
+      &:hover {
+        box-shadow: 3px 7px 35px 4px rgba(0, 0, 0, 0.57);
+        -webkit-box-shadow: 3px 7px 35px 4px rgba(0, 0, 0, 0.57);
+        -moz-box-shadow: 3px 7px 35px 4px rgba(0, 0, 0, 0.57);
+        z-index: 10;
+        transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        .pillar-card {
+          &-text {
+            .description {
+              max-height: 1000px;
+              opacity: 1;
+              font-size: 0.85rem;
+              line-height: 27px;
+            }
+          }
+        }
+      }
+      &-content {
+        position: relative;
+        background: black;
+      }
+      &-image {
+        width: 100%;
+        z-index: -1;
+      }
+      &-text {
+        padding: min(32px, 1rem);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        color: white;
+        h4 {
+          margin-bottom: 16px;
+        }
+        p {
+          margin-bottom: 16px;
+        }
+        .description {
+          max-height: 0;
+          opacity: 0;
+          transition: all 0.5s ease-in-out;
+          margin-bottom: 0;
+          font-size: 0.86rem;
+          line-height: 27px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .pillars {
+    h3 {
+      padding: 24px;
+      padding-bottom: 0;
+      margin-bottom: 24px;
+    }
+    &-content {
+      padding: 0;
+      .pillar-card {
+        margin-left: 0;
+        margin-right: 0;
+        height: 50%;
+        &:hover {
+          box-shadow: none;
+          -webkit-box-shadow: none;
+          -moz-box-shadow: none;
+          transform: none;
+        }
+        &-text {
+          .description {
+            opacity: 1;
+            max-height: 1000px;
+          }
+        }
+      }
+    }
+  }
+}

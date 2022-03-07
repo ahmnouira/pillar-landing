@@ -1,0 +1,43 @@
+input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 15px;
+  height: 56px;
+  border: none;
+  line-height: 24px;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  appearance: none;
+  border-bottom: 1px solid white;
+  margin-bottom: 16px;
+  &::placeholder {
+    color: white;
+    text-transform: uppercase;
+  }
+}
+
+h1 {
+  font-size: 3.5rem;
+  line-height: 64px;
+  margin-bottom: 16px;
+}
+
+h3 {
+  font-size: 2.5rem;
+  line-height: 48px;
+}
+
+h4 {
+  font-size: 2rem;
+  line-height: 40px;
+}
+
+p {
+  font-size: 12px;
+  line-height: 32px;
+  margin-bottom: 16px;
+  &.large {
+    font-size: 20px;
+  }
+}

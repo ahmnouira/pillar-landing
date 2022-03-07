@@ -1,0 +1,50 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  box-shadow: none;
+  position: fixed;
+  background-color: transparent;
+  z-index: 1111;
+  color: white;
+  transition: all 0.2s ease-in-out;
+  width: 100%;
+
+  &.active {
+    background-color: black !important;
+  }
+  .sidebar-trigger {
+    display: none;
+  }
+  &-content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    &-box {
+      .logo {
+        // cursor: pointer;
+        height: 4em;
+        margin-left: 0em;
+        position: absolute;
+        top: 0.8em;
+        text-decoration: none;
+      }
+      &:first-child {
+        flex-grow: 1;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .navbar {
+    height: 88px;
+    &-content-box {
+      .get-started {
+        display: none;
+      }
+    }
+    .sidebar-trigger {
+      display: block;
+    }
+  }
+}

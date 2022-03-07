@@ -1,0 +1,45 @@
+.ui-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: normal;
+  padding: 0 16px;
+  outline: none;
+  white-space: nowrap;
+  font-weight: 600;
+  border: solid 2px transparent;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  min-width: 110px;
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
+  text-decoration: none;
+  appearance: none;
+  border-radius: 3px;
+  background-color: transparent;
+  color: white;
+  width: auto;
+
+  &.primary {
+    border: 2px solid white;
+    // font-weight: 600;
+    &:hover {
+      background-color: white;
+      color: black;
+    }
+  }
+
+  &.secondary {
+    border: 2px solid white;
+    background-color: white;
+    color: black;
+    &:hover {
+      background-color: transparent;
+      color: white;
+    }
+  }
+}
