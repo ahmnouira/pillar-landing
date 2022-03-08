@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import TextField from './components/TextField';
 import styles from './CTA.module.scss';
 
 const CTA = () => {
@@ -68,13 +69,14 @@ const CTA = () => {
               required
               placeholder="Company"
             />
-            <input
+            <TextField
               id="email"
-              required
-              maxLength={80}
+              variant="standard"
+              label="Email"
+              inputProps={{ maxLength: 80, size: 20 }}
               name="email"
-              size={20}
               type="text"
+              fullWidth
               placeholder="Email"
             />
             <p className={styles['small']}>
