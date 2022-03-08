@@ -39,30 +39,37 @@
       }
     }
   }
-
-  p {
-    max-width: min(100%, 750px);
-  }
 }
 
 @media screen and (max-width: 600px) {
-  .banner h1 {
-    font-size: 2.5rem;
-    line-height: 40px;
+  .benefits {
+    &-hero {
+      display: none;
+    }
+
+    &-content {
+      padding: 48px 16px 48px;
+      .button-container {
+        display: none;
+      }
+      h6 {
+        font-size: 12px;
+        line-height: 15px;
+      }
+      h1 {
+        margin: 16px 0 32px;
+        font-size: 24px;
+        line-height: 30px;
+      }
+
+      &-item {
+        p {
+          font-size: 14px;
+          line-height: 20px;
+        }
+      }
+    }
   }
 }
 @media screen and (max-width: 900px) and (orientation: landscape) {
-  .banner {
-    p {
-      &.large {
-        font-size: 14px !important;
-        line-height: 16px !important;
-        margin-bottom: 16px !important;
-      }
-    }
-    h1 {
-      font-size: 2rem;
-      line-height: 40px;
-    }
-  }
 }

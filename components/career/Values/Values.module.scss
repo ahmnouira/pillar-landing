@@ -3,15 +3,20 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: 72px 0px 24px;
+    padding: 72px 16px 24px;
     h6 {
       color: #e72d65;
+      font-size: 14px;
+      line-height: 20px;
     }
-
     h3 {
       margin: 16px 0;
+      font-weight: 500;
+      font-size: 40px;
+      line-height: 48px;
     }
     > p {
+      text-align: center;
       font-weight: 500;
       font-size: 16px;
       line-height: 24px;
@@ -30,6 +35,7 @@
         font-weight: 600;
         font-size: 24px;
         line-height: 30px;
+        text-align: center;
         margin: 16px 0 8px;
       }
       p {
@@ -37,31 +43,40 @@
         font-size: 16px;
         line-height: 24px;
         color: #6e7176;
+        text-align: center;
       }
     }
   }
 }
 
 @media screen and (max-width: 600px) {
-  .about {
-    background: #fff;
-    padding-bottom: 40px;
+  .values {
     &-header {
-      margin: 16px;
-      padding: 0;
-      align-items: flex-start;
-      justify-content: flex-start;
-
+      padding: 32px 16px 32px;
+      h6 {
+        font-size: 12px;
+        line-height: 15px;
+      }
       h3 {
-        margin: 16px 0;
-        font-weight: 500;
         font-size: 24px;
         line-height: 30px;
       }
     }
 
     &-content {
-      padding: 0 24px;
+      padding: 0;
+      padding-bottom: 48px;
+      .value-item {
+        h3 {
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 26px;
+        }
+        p {
+          font-size: 14px;
+          line-height: 20px;
+        }
+      }
     }
   }
 }
