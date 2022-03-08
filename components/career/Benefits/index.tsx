@@ -1,4 +1,4 @@
-import { Grid } from '@mui/material';
+import { Grid, useMediaQuery } from '@mui/material';
 import { handleMoveToId } from 'utils';
 import styles from './Benefits.module.scss';
 interface Props {
@@ -14,6 +14,14 @@ const benefits = [
 ];
 
 const Benefits: React.FC<Props> = ({ imgSrc }) => {
+  const matches = useMediaQuery('(max-width:600px)');
+
+  let listOfBenefits = benefits;
+
+  if (matches) {
+    listOfBenefits = [benefits[0], benefits[1], benefits[2]];
+  }
+
   return (
     <section className={styles.benefits}>
       <Grid container>
@@ -24,9 +32,9 @@ const Benefits: React.FC<Props> = ({ imgSrc }) => {
           <div className={styles['benefits-content']}>
             <h6>CAREERS</h6>
             <h1>Benefits and Perks</h1>
-            {benefits.map((benefit, idx) => (
+            {listOfBenefits.map((benefit, idx) => (
               <div key={idx} className={styles['benefits-content-item']}>
-                <img src="/career/plus.svg" alt="plus-icon" />
+                <img src={`/career/${matches ? 'plus-1.svg' : 'plus.svg'}`} alt="plus-icon" />
                 <p>{benefit}</p>
               </div>
             ))}
