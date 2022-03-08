@@ -10,14 +10,20 @@ const Banner: React.FC<Props> = ({ imgSrc }) => {
       className={`${styles.banner} padding-wrapper complete`}
       style={{ backgroundImage: `url(${imgSrc})` }}>
       <div className={styles['banner-content']}>
-        <h1>Direct Marketplace for Institutional Commercial Real Estate</h1>
-        <p className={`${styles['large']} large`}>
-          Streamlined execution. No double promote. Minimized fee drag. Community-driven. Real estate capital,
-          optimized.
+        <div className={styles['banner-content-careers']}>
+          <div className={styles['banner-content-careers-container']}>
+            <img src="/career/logo.svg"></img>
+          </div>
+          <h6>CAREERS</h6>
+        </div>
+        <h1>Come work with us!</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim mattis a, id vulputate commodo
+          pretium dictum adipiscing arcu.
         </p>
         <div className={styles['button-container']}>
-          <button className="ui-button secondary" onClick={() => handleMoveToId()}>
-            Get Started
+          <button className="ui-button-2" onClick={() => handleMoveToId()}>
+            OPEN POSITIONS
           </button>
         </div>
       </div>
