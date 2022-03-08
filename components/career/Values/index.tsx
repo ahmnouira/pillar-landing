@@ -27,20 +27,20 @@ const values: ValueType[] = [
 
 const Values = () => {
   return (
-    <section className={styles.about}>
+    <section className={styles.values}>
       <div className={styles['values-header']}>
         <h6>CAREERS</h6>
         <h3>Our Values</h3>
         <p>Our values are short, simple, and real: they guide how we conduct our business, everyday.</p>
       </div>
       <div className={styles['values-content']}>
-        <Grid container columnSpacing={2} rowSpacing={2}>
+        <Grid container rowSpacing={2}>
           {values.map((value, index) => (
             <Grid item xs={12} sm={12} md={3} lg={3} key={index}>
               <div className={styles['value-item']}>
                 <img src={value.icon} alt={value.title} />
                 <h3>{value.title}</h3>
-                <p>{value.title}</p>
+                <p>{value.subTitle}</p>
               </div>
             </Grid>
           ))}

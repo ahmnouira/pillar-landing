@@ -1,10 +1,12 @@
-.about {
-  background: #fafafa;
+.values {
   &-header {
     display: flex;
     align-items: center;
     flex-direction: column;
     padding: 72px 0px 24px;
+    h6 {
+      color: #e72d65;
+    }
 
     h3 {
       margin: 16px 0;
@@ -18,67 +20,23 @@
   }
 
   &-content {
-    padding: 40px 80px 80px;
-    .person-card {
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      padding: 16px;
-      background: #ffffff;
-      border: 1px solid #dbecee;
-      box-shadow: 0px 10px 24px rgba(0, 0, 0, 0.1);
-      border-radius: 2px;
-      min-height: 160px;
-      transition: all 0.5s;
-
-      &-image {
-        width: 86px;
-        height: 86px;
-        object-fit: contain;
-        object-position: center;
+    padding: 50px 72px 72px;
+    .value-item {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      h3 {
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 30px;
+        margin: 16px 0 8px;
       }
-
-      &-content {
-        margin-left: 16px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-
-        h4 {
-          margin-bottom: 10px;
-          font-weight: 500;
-          font-size: 16px;
-          line-height: 24px;
-        }
-        &-role {
-          background: #dbecee;
-          border-radius: 4px;
-          display: flex;
-          flex-direction: column;
-
-          padding: 2px 8px;
-          height: 20px;
-          min-height: 20px;
-          margin-bottom: 0.625rem;
-          p {
-            color: #00838f;
-            text-transform: capitalize;
-            font-size: 12px;
-            line-height: 16px;
-            height: 20px;
-          }
-        }
-        .description {
-          font-size: 14px;
-          line-height: 20px;
-        }
-        .show {
-          font-size: 14px;
-          line-height: 20px;
-          color: #00838f;
-          cursor: pointer;
-        }
+      p {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        color: #6e7176;
       }
     }
   }
