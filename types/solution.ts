@@ -1,5 +1,5 @@
 export type SolutionType = {
   title: string;
-  subTitle: string;
+  content: string;
   icon: string;
 };

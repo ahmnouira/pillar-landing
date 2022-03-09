@@ -1,5 +1,115 @@
-.until {
-  &- {
+.how-it-works {
+  background: #fafafa;
+  padding: 72px;
+  h6 {
+    font-size: 12px;
+    line-height: 16px;
+    color: #613ced;
+  }
+
+  h3 {
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 48px;
+    margin: 16px 0;
+  }
+
+  small {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #6e7176;
+  }
+
+  p {
+    margin-top: 40px;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 34px;
+
+    span {
+      color: #00838f;
+    }
+  }
+
+  &-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top: 40px;
+    width: 100%;
+    position: relative;
+    &-small {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 55px 36px;
+      background: #ffffff;
+      box-shadow: 0px 9px 16px rgba(0, 0, 0, 0.11);
+      border-radius: 8px;
+      width: min(60%, 420px);
+      h4 {
+        margin-top: 18.5px;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 30px;
+      }
+      p {
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 20px;
+        background: #fafafa;
+        border-radius: 8px;
+        padding: 16px;
+        margin-top: 48px;
+
+        span {
+          font-weight: 600;
+          color: #000;
+        }
+      }
+    }
+
+    &-icon {
+      margin: 0 40px;
+      align-self: center;
+    }
+
+    &-large {
+      padding: 55px 36px;
+      background: #ffffff;
+      box-shadow: 0px 9px 16px rgba(0, 0, 0, 0.11);
+      border-radius: 8px;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      h4 {
+        margin-top: 18.5px;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 30px;
+      }
+
+      &-row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 32px;
+        height: 112px;
+        p {
+          font-weight: normal;
+          font-size: 14px;
+          line-height: 20px;
+          padding: 36px 16px;
+          background: #dbecee;
+          border-radius: 8px;
+        }
+        &-icon {
+          margin: 0px 20px;
+          margin-top: 20px;
+        }
+      }
+    }
   }
 }
 

@@ -4,19 +4,22 @@ import styles from './PillarSolution.module.scss';
 
 const solutions: SolutionType[] = [
   {
-    title: 'LOREM IPSUM',
-    icon: '/career/values/integrity.svg',
-    subTitle: 'Portfolio Management',
+    title: 'Facilitate Efficient Access to Capital',
+    icon: '/solution/solution/1.svg',
+    content:
+      'Depth and breadth of capital pool allows for timely execution along risk profiles and across the capital stack.',
   },
   {
-    title: 'LOREM IPSUM',
-    icon: '/career/values/transparency.svg',
-    subTitle: 'Tax & Estate Planning',
+    title: 'Owner Always Maintains Control',
+    icon: '/solution/solution/2.svg',
+    content:
+      'Including all major capital decisions. No forced sales, no meddling LPs. Investors benefit from streamlined reporting and analytical tools.',
   },
   {
-    title: 'LOREM IPSUM',
-    icon: '/career/values/humility.svg',
-    subTitle: 'Investor Relations',
+    title: 'All With Lower Fees',
+    icon: '/solution/solution/3.svg',
+    content:
+      'Solve your needs while managing fees. Relative to competitors, we’re up to 75% cheaper - we focus on providing innovative solutions to real problems,  without reinventing the wheel.',
   },
 ];
 
@@ -24,17 +27,17 @@ const PillarSolution = () => {
   return (
     <section className={styles['pillar-solution']}>
       <div className={styles['pillar-solution-header']}>
-        <h6>LOREM IPSUM</h6>
-        <h3>As an Owner you have financial needs that should drive your capital decisions</h3>
+        <h3>The Pillar Solution</h3>
       </div>
       <div className={styles['pillar-solution-content']}>
-        <Grid container rowSpacing={2}>
+        <Grid container rowSpacing={2} columnSpacing={2}>
           {solutions.map((solution, index) => (
-            <Grid item xs={12} sm={12} md={3} lg={3} key={index}>
-              <div className={styles['pillar-solution-item']}>
+            <Grid item xs={12} sm={12} md={4} lg={4} key={index}>
+              <div className={styles['pillar-solution-content-item']}>
                 <img src={solution.icon} alt={solution.title} />
+                <h6>LOREM IPSUM</h6>
                 <h3>{solution.title}</h3>
-                <p>{solution.subTitle}</p>
+                <p>{solution.content}</p>
               </div>
             </Grid>
           ))}

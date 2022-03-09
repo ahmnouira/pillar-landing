@@ -1,5 +1,6 @@
 .until {
   &-now {
+    height: 506px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -59,9 +60,10 @@
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 912px) {
   .until {
     &-now {
+      height: auto;
       padding: 32px 16px;
 
       h1 {
