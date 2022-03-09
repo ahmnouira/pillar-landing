@@ -8,6 +8,12 @@ const HowItWorks: React.FC = () => {
     <section className={styles['how-it-works']}>
       <h6>SPONSOR</h6>
       <h3>How it Works</h3>
+
+      <div
+        className={styles['how-it-works-mobile']}
+        style={{ backgroundImage: `url(/solution/how-it-works.png)` }}
+      />
+
       <small>Our process for owners of institutional-quality assets</small>
       <p>
         Pillar underwrites the GP <span>to instutional standards</span>
