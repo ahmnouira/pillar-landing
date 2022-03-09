@@ -43,3 +43,28 @@
     }
   }
 }
+
+.ui-button-2 {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 44px;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 12px 16px;
+  outline: none;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  min-width: 146px;
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
+  text-decoration: none;
+  appearance: none;
+  border-radius: 4px;
+  background: #e72d65;
+  color: white;
+  width: auto;
+  border: none;
+}
