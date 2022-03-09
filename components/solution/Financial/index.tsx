@@ -1,4 +1,4 @@
-import { Grid } from '@mui/material';
+import { Grid, useMediaQuery } from '@mui/material';
 import { FinancialType } from 'types/financial';
 import styles from './Financial.module.scss';
 
@@ -25,6 +25,8 @@ const financials: FinancialType[] = [
 ];
 
 const Financial = () => {
+  const matches = useMediaQuery('(max-width:600px)');
+
   return (
     <section className={styles.financial}>
       <div className={styles['financial-header']}>
@@ -39,7 +41,7 @@ const Financial = () => {
                 <img src={financial.icon} alt={financial.title} />
                 <h4>{financial.title}</h4>
                 <h2>{financial.subTitle}</h2>
-                <p style={{ color: index % 2 === 0 ? '#6E7176' : '#000' }}>{financial.content}</p>
+                <p style={{ color: matches || index % 2 === 0 ? '#6E7176' : '#000' }}>{financial.content}</p>
               </div>
             </Grid>
           ))}

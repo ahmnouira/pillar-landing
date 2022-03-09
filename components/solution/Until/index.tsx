@@ -1,4 +1,5 @@
 import { Grid, useMediaQuery } from '@mui/material';
+import classNames from 'classnames';
 import styles from './Until.module.scss';
 
 const untilNow = [
@@ -23,28 +24,34 @@ const Until: React.FC = () => {
       <Grid container>
         <Grid item xs={12} sm={6} sx={{}}>
           <div className={styles['until-now']}>
-            <div className={styles['until-tag']}>
+            <div className={styles['until-now-tag']}>
+              <div>
+                <img src="/solution/users.svg"></img>
+              </div>
               <p>LOREM IPSUM</p>
             </div>
             <h1>Until Now</h1>
             {untilNow.map((el, idx) => (
-              <div key={idx} className={styles['until-content-item']}>
-                <img src={`/career/${matches ? 'plus-1.svg' : 'plus.svg'}`} alt="plus-icon" />
+              <div key={idx} className={styles['until-now-item']}>
+                <img src={`/solution/${matches ? 'remove.svg' : 'arrow-left.svg'}`} alt="plus-icon" />
                 <p>{el}</p>
               </div>
             ))}
           </div>
         </Grid>
         <Grid item xs={12} sm={6}>
-          <div className={styles['until-now']}>
-            <div className={styles['until-tag']}>
+          <div className={classNames(styles['until-now'], styles['right'])}>
+            <div className={styles['until-now-tag']}>
+              <div>
+                <img src="/solution/users.svg"></img>
+              </div>
               <p>LOREM IPSUM</p>
             </div>
-            <h1>With Pillar</h1>
+            <h1 className={styles['right']}>With Pillar</h1>
             {withPillar.map((el, idx) => (
-              <div key={idx} className={styles['until-content-item']}>
-                <img src={`/career/${matches ? 'plus-1.svg' : 'plus.svg'}`} alt="plus-icon" />
-                <p>{el}</p>
+              <div key={idx} className={styles['until-now-item']}>
+                <img src={`/solution/check.svg`} alt="check" />
+                <p className={styles['right']}>{el}</p>
               </div>
             ))}
           </div>
