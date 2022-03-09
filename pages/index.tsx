@@ -22,7 +22,6 @@ const Home: NextPage = () => {
       <Banner imgSrc="/hero.jpg" />
       <Pillars />
       <About />
-
       <CTA />
     </MainLayout>
   );

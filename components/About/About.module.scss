@@ -1,6 +1,5 @@
 .about {
   background: #fafafa;
-  min-height: calc(100vh + 125px);
   &-header {
     display: flex;
     align-items: center;
@@ -24,7 +23,6 @@
       display: flex;
       flex-direction: row;
       align-items: flex-start;
-      width: 100%;
       padding: 16px;
       background: #ffffff;
       border: 1px solid #dbecee;
@@ -32,6 +30,7 @@
       border-radius: 2px;
       min-height: 160px;
       transition: all 0.5s;
+
       &-image {
         width: 86px;
         height: 86px;
@@ -44,6 +43,8 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        justify-content: flex-start;
+
         h4 {
           margin-bottom: 10px;
           font-weight: 500;
