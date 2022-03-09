@@ -10,8 +10,8 @@ const Banner: React.FC<Props> = ({ imgSrc }) => {
       className={`${styles.banner} padding-wrapper complete`}
       style={{ backgroundImage: `url(${imgSrc})` }}>
       <div className={styles['banner-content']}>
-        <div className={styles['banner-content-careers']}>
-          <div className={styles['banner-content-careers-container']}>
+        <div className={styles['banner-content-solutions']}>
+          <div className={styles['banner-content-solutions-container']}>
             <img src="/career/logo.svg"></img>
           </div>
           <h6>SOLUTIONS</h6>
@@ -22,9 +22,7 @@ const Banner: React.FC<Props> = ({ imgSrc }) => {
           profiles, solving liquidity needs across the deal lifecycle.
         </p>
         <div className={styles['button-container']}>
-          <button className="ui-button-2" onClick={() => handleMoveToId()}>
-            OPEN POSITIONS
-          </button>
+          <button className="ui-button-2 tertiary">SCHEDULE A CALL</button>
         </div>
       </div>
     </section>
