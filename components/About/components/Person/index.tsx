@@ -4,15 +4,11 @@ import { PersonType } from 'types/person';
 interface Props {
   person: PersonType;
   styles: any;
+  show?: boolean;
+  toggleShow?: () => void;
 }
 
-const Person: React.FC<Props> = ({ person, styles }) => {
-  const [show, setShow] = React.useState(false);
-
-  const toggleShow = () => {
-    setShow((value) => !value);
-  };
-
+const Person: React.FC<Props> = ({ person, styles, show, toggleShow }) => {
   return (
     <div className={styles['person-card']}>
       <img className={styles['person-card-image']} src={person.avatar} alt={person.name} />

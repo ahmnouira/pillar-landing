@@ -1,3 +1,4 @@
+import React from 'react';
 import { Grid } from '@mui/material';
 import { PersonType } from 'types/person';
 import Person from './components/Person';
@@ -27,6 +28,12 @@ const people: PersonType[] = [
 ];
 
 const About = () => {
+  const [show, setShow] = React.useState(false);
+
+  const toggleShow = () => {
+    setShow((value) => !value);
+  };
+
   return (
     <section className={styles.about}>
       <div className={styles['about-header']}>
@@ -38,7 +45,7 @@ const About = () => {
         <Grid container columnSpacing={2} rowSpacing={2}>
           {people.map((person, index) => (
             <Grid item xs={12} sm={12} md={6} lg={6} key={index}>
-              <Person person={person} styles={styles} />
+              <Person person={person} styles={styles} show={show} toggleShow={toggleShow} />
             </Grid>
           ))}
         </Grid>
