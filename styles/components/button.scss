@@ -67,4 +67,8 @@
   color: white;
   width: auto;
   border: none;
+
+  &.tertiary {
+    background: #613ced;
+  }
 }
