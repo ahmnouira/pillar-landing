@@ -1,6 +1,4 @@
-import Image from 'next/image';
 import Link from 'next/link';
-import MenuIcon from '@mui/icons-material/Menu';
 import { useScrollTrigger } from '@mui/material';
 import classNames from 'classnames';
 import styles from './Navbar.module.scss';
@@ -17,24 +15,41 @@ export type NavbarProps = {
   dark?: boolean;
   setOpen?: () => void;
   logoColor?: string;
-  menus?: Menu[];
 };
 
-const Navbar: React.FC<NavbarProps> = ({
-  dark = true,
-  setOpen,
-  logoColor = 'white',
-  menus = [
-    {
-      text: 'Get Started',
-    },
-  ],
-}: NavbarProps) => {
+const Navbar: React.FC<NavbarProps> = ({ dark = true, setOpen, logoColor = 'white' }: NavbarProps) => {
   const router = useRouter();
   const trigger = useScrollTrigger({
     disableHysteresis: true,
     threshold: 80,
   });
+
+  const menus: Menu[] = [
+    {
+      text: 'Solutions',
+      onClick: () => router.push('/sponsor'),
+    },
+    {
+      text: 'About us',
+      onClick: () => handleAboutUsClick(),
+    },
+    {
+      text: 'Careers',
+      onClick: () => router.push('/career'),
+    },
+    {
+      text: 'Contact Us',
+      onClick: () => handleButtonClick(),
+    },
+    {
+      text: 'Get Started',
+    },
+  ];
+
+  const handleAboutUsClick = () => {
+    router.pathname !== '/' && router.push('/?about=true');
+    router.pathname === '/' && handleMoveToId('about');
+  };
 
   const handleButtonClick = () => {
     router.pathname !== '/' && router.push('/?cta=true');
@@ -66,7 +81,6 @@ const Navbar: React.FC<NavbarProps> = ({
             </a>
           </Link>
         </div>
-
         {menus &&
           menus.map((menu, idx) => {
             const linkClass = idx !== menus.length - 1 ? (trigger || dark ? 'link-trigger' : 'link') : '';

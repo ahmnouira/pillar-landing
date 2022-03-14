@@ -8,34 +8,19 @@ import { useRouter } from 'next/router';
 import { handleMoveToId } from 'utils';
 import About from 'components/About';
 
-const menus = [
-  {
-    text: 'About us',
-    onClick: () => handleMoveToId('about'),
-  },
-  {
-    text: 'Contact us',
-    onClick: () => handleMoveToId('cta'),
-  },
-  {
-    text: 'Get Started',
-  },
-];
-
 const Home: NextPage = () => {
   const router = useRouter();
 
   useEffect(() => {
     if (router.query.cta) {
       handleMoveToId('cta');
-    }
+    } else if (router.query.about) handleMoveToId('about');
   }, [router]);
 
   return (
     <MainLayout
       navbarProps={{
         dark: false,
-        menus: menus,
       }}>
       <Banner imgSrc="/hero.jpg" />
       <Pillars />
