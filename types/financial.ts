@@ -1,6 +1,5 @@
 export type FinancialType = {
   title: string;
-  subTitle: string;
-  icon: string;
+  icon: any;
   content: string;
 };
