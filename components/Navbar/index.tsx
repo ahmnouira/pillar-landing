@@ -8,7 +8,24 @@ import { handleMoveToId } from 'utils';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
-const Navbar: React.FC<any> = ({ dark = false, setOpen, logoColor = 'white' }) => {
+type Menu = {
+  text: string;
+  onClick?: () => {};
+};
+
+export type NavbarProps = {
+  dark?: boolean;
+  setOpen?: () => void;
+  logoColor?: string;
+  menus?: Menu[];
+};
+
+const Navbar: React.FC<NavbarProps> = ({
+  dark = true,
+  setOpen,
+  logoColor = 'white',
+  menus = [],
+}: NavbarProps) => {
   const router = useRouter();
   const trigger = useScrollTrigger({
     disableHysteresis: true,
@@ -45,11 +62,19 @@ const Navbar: React.FC<any> = ({ dark = false, setOpen, logoColor = 'white' }) =
             </a>
           </Link>
         </div>
-        <div className={styles['navbar-content-box']}>
-          <button className={`ui-button primary ${styles['get-started']}`} onClick={handleButtonClick}>
-            Get Started
-          </button>
-        </div>
+        {menus &&
+          menus.map((menu, idx) => {
+            return (
+              <div className={styles['navbar-content-box']} key={idx}>
+                <button
+                  className={`ui-button primary ${styles['get-started']}`}
+                  onClick={menu.onClick ?? handleButtonClick}>
+                  {menu.text}
+                </button>
+              </div>
+            );
+          })}
+
         {/* Disable sidebar menu for now - KR Dec 29, 2021
         <div className={styles['sidebar-trigger']} onClick={setOpen}>
           <MenuIcon />

@@ -3,7 +3,7 @@ import { termsMarkup } from 'utils';
 
 const TermsOfService = () => {
   return (
-    <MainLayout darkNav>
+    <MainLayout>
       <div className="padding-wrapper policies" dangerouslySetInnerHTML={{ __html: termsMarkup }}></div>
     </MainLayout>
   );

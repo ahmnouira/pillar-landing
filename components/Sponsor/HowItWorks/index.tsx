@@ -4,8 +4,6 @@ import styles from './HowItWorks.module.scss';
 const HowItWorks: React.FC = () => {
   const matches = useMediaQuery('(max-width:600px)');
 
-  console.log(window.innerWidth);
-
   return (
     <section className={styles['how-it-works']}>
       <h6>SPONSOR</h6>
