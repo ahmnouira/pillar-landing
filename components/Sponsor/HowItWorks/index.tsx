@@ -1,4 +1,4 @@
-import { Grid, useMediaQuery } from '@mui/material';
+import { useMediaQuery } from '@mui/material';
 import styles from './HowItWorks.module.scss';
 
 const HowItWorks: React.FC = () => {
@@ -11,17 +11,17 @@ const HowItWorks: React.FC = () => {
 
       <div
         className={styles['how-it-works-mobile']}
-        style={{ backgroundImage: `url(/solution/how-it-works.png)` }}
+        style={{ backgroundImage: `url(/sponsor/how-it-works.png)` }}
       />
 
       <small>Our process for owners of institutional-quality assets</small>
       <p>
-        Pillar underwrites the GP <span>to instutional standards</span>
+        Pillar underwrites the GP <span>to institutional standards</span>
       </p>
 
       <div className={styles['how-it-works-cards']}>
         <div className={styles['how-it-works-cards-small']}>
-          <img src="/solution/warring.svg" />
+          <img src="/sponsor/warring.svg" />
           <h4>GP does not pass due diligence</h4>
           <p>
             <span>Pillar works with GP</span> to shore up shortfailds by introducing third party service
@@ -29,16 +29,16 @@ const HowItWorks: React.FC = () => {
           </p>
         </div>
         <div className={styles['how-it-works-cards-icon']}>
-          <img src="/solution/step-blue.svg" />
+          <img src="/sponsor/step-blue.svg" />
         </div>
         <div className={styles['how-it-works-cards-large']}>
-          <img src="/solution/check-outline.svg" />
+          <img src="/sponsor/check-outline.svg" />
           <h4>GP passes due diligence</h4>
           <div className={styles['how-it-works-cards-large-row']}>
             <p>Sponsor and Asset are onboarding onto platform</p>
 
             <div className={styles['how-it-works-cards-large-row-icon']}>
-              <img src="/solution/step.svg" />
+              <img src="/sponsor/step.svg" />
             </div>
 
             <p>
@@ -47,7 +47,7 @@ const HowItWorks: React.FC = () => {
             </p>
 
             <div className={styles['how-it-works-cards-large-row-icon']}>
-              <img src="/solution/step.svg" />
+              <img src="/sponsor/step.svg" />
             </div>
             <p>Post-close ongoing asset reporting via automated ingestion of financial data</p>
           </div>

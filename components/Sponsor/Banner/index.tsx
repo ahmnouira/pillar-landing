@@ -1,4 +1,3 @@
-import { handleMoveToId } from 'utils';
 import styles from './Banner.module.scss';
 interface Props {
   imgSrc: string;

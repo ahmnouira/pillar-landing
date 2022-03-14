@@ -6,8 +6,9 @@ import classNames from 'classnames';
 import styles from './Navbar.module.scss';
 import { handleMoveToId } from 'utils';
 import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 
-const Navbar: React.FC<any> = ({ dark = false, setOpen }) => {
+const Navbar: React.FC<any> = ({ dark = false, setOpen, logoColor = 'white' }) => {
   const router = useRouter();
   const trigger = useScrollTrigger({
     disableHysteresis: true,
@@ -19,6 +20,12 @@ const Navbar: React.FC<any> = ({ dark = false, setOpen }) => {
     router.pathname === '/' && handleMoveToId();
   };
 
+  const [activeLogoColor, setActiveLogoColor] = useState('');
+
+  useEffect(() => {
+    setActiveLogoColor(trigger ? 'white' : logoColor);
+  }, [trigger]);
+
   return (
     <nav
       className={classNames(`${styles.navbar} padding-wrapper`, {
@@ -29,8 +36,8 @@ const Navbar: React.FC<any> = ({ dark = false, setOpen }) => {
           <Link href="/">
             <a>
               <img
-                src="/logo-white.png"
-                alt="Pillar Markets Logo"
+                src={`/logo-${activeLogoColor}.png`}
+                alt="Pillar Markets"
                 width={120}
                 height={60}
                 className={styles.logo}

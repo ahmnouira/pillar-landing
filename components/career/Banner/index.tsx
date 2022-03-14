@@ -17,13 +17,12 @@ const Banner: React.FC<Props> = ({ imgSrc }) => {
           <h6>CAREERS</h6>
         </div>
         <h1>Come work with us!</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim mattis a, id vulputate commodo
-          pretium dictum adipiscing arcu.
-        </p>
+        <p>Want to change the future of private real estate capital? We're hiring!</p>
         <div className={styles['button-container']}>
           <button className="ui-button-2" onClick={() => handleMoveToId()}>
-            OPEN POSITIONS
+            <a href="https://angel.co/company/pillarmarkets" target="_blank" rel="noopener noreferrer">
+              OPEN POSITIONS
+            </a>
           </button>
         </div>
       </div>

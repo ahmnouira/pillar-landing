@@ -4,7 +4,7 @@ import { ValueType } from 'types/value';
 
 const values: ValueType[] = [
   {
-    title: 'Values',
+    title: 'Integrity',
     icon: '/career/values/integrity.svg',
     subTitle: 'Do the right thing, every time.',
   },
@@ -16,7 +16,7 @@ const values: ValueType[] = [
   {
     title: 'Humility',
     icon: '/career/values/humility.svg',
-    subTitle: 'No egos, no jerks.',
+    subTitle: 'No egos allowed.',
   },
   {
     title: 'Meritocracy',
@@ -29,7 +29,6 @@ const Values = () => {
   return (
     <section className={styles.values}>
       <div className={styles['values-header']}>
-        <h6>CAREERS</h6>
         <h3>Our Values</h3>
         <p>Our values are short, simple, and real: they guide how we conduct our business, everyday.</p>
       </div>

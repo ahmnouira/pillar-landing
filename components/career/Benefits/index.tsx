@@ -30,7 +30,6 @@ const Benefits: React.FC<Props> = ({ imgSrc }) => {
         </Grid>
         <Grid item xs={12} sm={6}>
           <div className={styles['benefits-content']}>
-            <h6>CAREERS</h6>
             <h1>Benefits and Perks</h1>
             {listOfBenefits.map((benefit, idx) => (
               <div key={idx} className={styles['benefits-content-item']}>
@@ -40,7 +39,9 @@ const Benefits: React.FC<Props> = ({ imgSrc }) => {
             ))}
             <div className={styles['button-container']}>
               <button className="ui-button-2" onClick={() => handleMoveToId()}>
-                OPEN POSITIONS
+                <a target="_blank" rel="noopener noreferrer">
+                  OPEN POSITIONS
+                </a>
               </button>
             </div>
           </div>

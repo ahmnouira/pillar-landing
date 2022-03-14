@@ -6,7 +6,7 @@ import Benefits from 'components/career/Benefits';
 
 const Career: NextPage = () => {
   return (
-    <MainLayout>
+    <MainLayout logoColor="black">
       <Banner imgSrc="/career/hero.jpeg" />
       <Values />
       <Benefits imgSrc="/career/benefit-hero.png" />

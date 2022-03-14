@@ -12,16 +12,18 @@ const Footer = () => {
         <p>Digital Infrastructure Powering Private Real Estate</p>
         <a href="mailto:info@pillarmarkets.com">info@pillarmarkets.com</a>
         <div className={styles['button-container']}>
-          <a target="_blank" className={styles['icon']}>
+          <a target="_blank" rel="noopener noreferrer" className={styles['icon']}>
             <LinkedInIcon fontSize="large" sx={{ color: 'white', fontSize: 28 }} />
           </a>
-          <a target="_blank" className={styles['icon']}>
+          <a target="_blank" className={styles['icon']} rel="noopener noreferrer">
             <TwitterIcon fontSize="large" sx={{ color: 'white', fontSize: 28 }} />
           </a>
         </div>
       </div>
       <footer>
         <p>Copyright &copy; {new Date().getFullYear()} Pillar Markets Inc.</p>
+        <Link href="/sponsor">Sponsors</Link>
+        <Link href="/career">Careers</Link>
         <Link href="/terms-of-service">Terms of Service</Link>
         <Link href="/privacy-and-cookies">Privacy and Cookies</Link>
         <Link href="/confidentiality-agreement">Confidentiality Agreement</Link>

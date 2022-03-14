@@ -1,8 +1,8 @@
 export type PersonType = {
-  id: string;
+  id: number;
   avatar: string;
   name: string;
   role: string;
+  summary: string;
   description: string;
-  fullDescription: string;
 };

@@ -26,14 +26,14 @@ const Until: React.FC = () => {
           <div className={styles['until-now']}>
             <div className={styles['until-now-tag']}>
               <div>
-                <img src="/solution/users.svg"></img>
+                <img src="/sponsor/users.svg"></img>
               </div>
               <p>LOREM IPSUM</p>
             </div>
             <h1>Until Now</h1>
             {untilNow.map((el, idx) => (
               <div key={idx} className={styles['until-now-item']}>
-                <img src={`/solution/${matches ? 'remove.svg' : 'arrow-left.svg'}`} alt="plus-icon" />
+                <img src={`/sponsor/${matches ? 'remove.svg' : 'arrow-left.svg'}`} alt="plus-icon" />
                 <p>{el}</p>
               </div>
             ))}
@@ -43,14 +43,14 @@ const Until: React.FC = () => {
           <div className={classNames(styles['until-now'], styles['right'])}>
             <div className={styles['until-now-tag']}>
               <div>
-                <img src="/solution/users.svg"></img>
+                <img src="/sponsor/users.svg"></img>
               </div>
               <p>LOREM IPSUM</p>
             </div>
             <h1 className={styles['right']}>With Pillar</h1>
             {withPillar.map((el, idx) => (
               <div key={idx} className={styles['until-now-item']}>
-                <img src={`/solution/check.svg`} alt="check" />
+                <img src={`/sponsor/check.svg`} alt="check" />
                 <p className={styles['right']}>{el}</p>
               </div>
             ))}
