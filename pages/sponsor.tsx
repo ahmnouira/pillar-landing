@@ -8,8 +8,26 @@ import Until from 'components/Sponsor/Until';
 import type { NextPage } from 'next';
 
 const Sponsor: NextPage = () => {
+  const menus = [
+    {
+      text: 'Solutions',
+    },
+    {
+      text: 'About us',
+    },
+    {
+      text: 'Careers',
+    },
+    {
+      text: 'Contact Us',
+    },
+  ];
   return (
-    <MainLayout navbarProps={{ logoColor: 'white' }}>
+    <MainLayout
+      navbarProps={{
+        logoColor: 'white',
+        menus: menus,
+      }}>
       <Banner imgSrc="/sponsor/bg.png" />
       <Financial />
       <Until />

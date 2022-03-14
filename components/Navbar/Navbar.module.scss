@@ -21,6 +21,7 @@
     width: 100%;
     display: flex;
     align-items: center;
+
     &-box {
       .logo {
         // cursor: pointer;
@@ -29,6 +30,12 @@
         position: absolute;
         top: 0.8em;
         text-decoration: none;
+      }
+
+      margin-right: 32px;
+
+      &:last-child {
+        margin-right: 0px;
       }
       &:first-child {
         flex-grow: 1;

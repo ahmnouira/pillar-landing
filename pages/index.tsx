@@ -18,7 +18,21 @@ const Home: NextPage = () => {
   }, [router]);
 
   return (
-    <MainLayout>
+    <MainLayout
+      navbarProps={{
+        dark: false,
+        menus: [
+          {
+            text: 'About us',
+          },
+          {
+            text: 'Contact us',
+          },
+          {
+            text: 'Get Started',
+          },
+        ],
+      }}>
       <Banner imgSrc="/hero.jpg" />
       <Pillars />
       <About />

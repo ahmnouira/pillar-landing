@@ -42,6 +42,27 @@
       color: white;
     }
   }
+
+  &.link-trigger {
+    border: none;
+    height: auto;
+    padding: 0;
+    min-width: auto;
+    &:hover {
+      background-color: transparent;
+      color: white;
+    }
+  }
+
+  &.link {
+    padding: 0;
+    border: none;
+    height: auto;
+    min-width: auto;
+    &:hover {
+      background-color: transparent;
+    }
+  }
 }
 
 .ui-button-2 {

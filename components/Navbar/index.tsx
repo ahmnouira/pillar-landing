@@ -24,7 +24,11 @@ const Navbar: React.FC<NavbarProps> = ({
   dark = true,
   setOpen,
   logoColor = 'white',
-  menus = [],
+  menus = [
+    {
+      text: 'Get Started',
+    },
+  ],
 }: NavbarProps) => {
   const router = useRouter();
   const trigger = useScrollTrigger({
@@ -62,24 +66,25 @@ const Navbar: React.FC<NavbarProps> = ({
             </a>
           </Link>
         </div>
+
         {menus &&
           menus.map((menu, idx) => {
+            const linkClass = idx !== menus.length - 1 ? (trigger || dark ? 'link-trigger' : 'link') : '';
             return (
               <div className={styles['navbar-content-box']} key={idx}>
                 <button
-                  className={`ui-button primary ${styles['get-started']}`}
+                  className={`ui-button primary ${linkClass} ${styles['get-started']}`}
                   onClick={menu.onClick ?? handleButtonClick}>
                   {menu.text}
                 </button>
               </div>
             );
           })}
-
-        {/* Disable sidebar menu for now - KR Dec 29, 2021
+      </div>
+      {/* Disable sidebar menu for now - KR Dec 29, 2021
         <div className={styles['sidebar-trigger']} onClick={setOpen}>
           <MenuIcon />
         </div> */}
-      </div>
     </nav>
   );
 };
