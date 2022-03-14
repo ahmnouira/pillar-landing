@@ -25,7 +25,7 @@ const solutions: SolutionType[] = [
 
 const PillarSolution = () => {
   return (
-    <section className={styles['pillar-solution']}>
+    <section id="solutions" className={styles['pillar-solution']}>
       <div className={styles['pillar-solution-header']}>
         <h3>The Pillar Solution</h3>
       </div>

@@ -6,20 +6,25 @@ import HowItWorks from 'components/Sponsor/HowItWorks';
 import PillarSolution from 'components/Sponsor/PillarSolution';
 import Until from 'components/Sponsor/Until';
 import type { NextPage } from 'next';
+import { handleMoveToId } from 'utils';
 
 const Sponsor: NextPage = () => {
   const menus = [
     {
       text: 'Solutions',
+      onClick: () => handleMoveToId('solutions'),
     },
     {
       text: 'About us',
+      onClick: () => handleMoveToId('about'),
     },
     {
       text: 'Careers',
+      onClick: () => handleMoveToId('careers'),
     },
     {
       text: 'Contact Us',
+      onClick: () => handleMoveToId('cta'),
     },
   ];
   return (

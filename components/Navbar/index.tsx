@@ -10,7 +10,7 @@ import { useEffect, useState } from 'react';
 
 type Menu = {
   text: string;
-  onClick?: () => {};
+  onClick?: () => void;
 };
 
 export type NavbarProps = {
