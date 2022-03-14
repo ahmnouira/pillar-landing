@@ -1,5 +1,5 @@
 import { Grid } from '@mui/material';
-import Link from 'next/link';
+import { useRouter } from 'next/router';
 import PillarCard from './components/PillarCard';
 import styles from './Pillar.module.scss';
 
@@ -8,7 +8,7 @@ interface iPillarCards {
   subtitle: string;
   description: string;
   image: string;
-  path: string;
+  path?: string;
 }
 
 const pillarCardsContent: iPillarCards[] = [
@@ -18,7 +18,6 @@ const pillarCardsContent: iPillarCards[] = [
     subtitle: 'Investment & Operational Due Diligence, Deal Flow',
     description:
       "Detailed vetting of sponsors' people, processes, systems, and track records coupled with comprehensive asset-level data to facilitate efficient investment due diligence.",
-    path: '/#',
   },
   {
     image: '/landingpage/data-first.png',
@@ -26,7 +25,6 @@ const pillarCardsContent: iPillarCards[] = [
     subtitle: 'Standardized Reporting & Customizable Analytics',
     description:
       'Incorporating alternative data sources and up-to-date information from property management and accounting software to support a systematic investment process.',
-    path: '/#',
   },
   {
     image: '/landingpage/network-driven.png',
@@ -34,7 +32,6 @@ const pillarCardsContent: iPillarCards[] = [
     subtitle: 'Discovery, Diligence, & Monitoring',
     description:
       'Building confidence and facilitating transactions via a community of sophisticated investors: discuss new and ongoing deals, follow respected sponsors and investors.',
-    path: '/career',
   },
   {
     image: '/landingpage/capital-structure.png',
@@ -47,23 +44,34 @@ const pillarCardsContent: iPillarCards[] = [
 ];
 
 const Pillars = () => {
+  const router = useRouter();
+
+  const handleNavigate = () => {
+    router.push('/sponsor');
+  };
+
   return (
     <section className={styles.pillars}>
       <h3>Our Pillars</h3>
       <div className={styles['pillars-content']}>
-        {pillarCardsContent.map(({ title, subtitle, description, image, path }, index) => (
-          <Link href={path} key={index}>
-            <Grid item xs={12} sm={6} lg={3}>
-              <PillarCard
-                title={title}
-                subtitle={subtitle}
-                description={description}
-                imageSrc={image}
-                styles={styles}
-              />
+        {pillarCardsContent.map(({ title, subtitle, description, image, path }, index) => {
+          const isLast = index === pillarCardsContent.length - 1;
+          return (
+            <Grid item xs={12} sm={6} lg={3} key={index}>
+              <div
+                onClick={isLast ? handleNavigate : undefined}
+                style={{ cursor: isLast ? 'pointer' : 'default' }}>
+                <PillarCard
+                  title={title}
+                  subtitle={subtitle}
+                  description={description}
+                  imageSrc={image}
+                  styles={styles}
+                />
+              </div>
             </Grid>
-          </Link>
-        ))}
+          );
+        })}
       </div>
     </section>
   );
