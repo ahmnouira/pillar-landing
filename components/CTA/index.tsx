@@ -1,7 +1,8 @@
 import { Grid } from '@mui/material';
+import Toast from 'components/Toast';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 import TextField from './components/TextField';
 import styles from './CTA.module.scss';
 
@@ -9,6 +10,31 @@ const CTA = () => {
   const router = useRouter();
   const [success, setSuccess] = useState(false);
   const [baseUrl, setBaseUrl] = useState('');
+
+  const toggleTost = () => {
+    setSuccess((value) => !value);
+  };
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setSuccess(false);
+    }, 8000);
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [success]);
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    event.stopPropagation();
+
+    try {
+      toggleTost();
+    } catch (error) {
+      console.log(error);
+    } finally {
+    }
+  };
 
   return (
     <section id="cta" className={styles['cta']}>
@@ -18,7 +44,7 @@ const CTA = () => {
           <p>Speak to a team member to learn more about the Pillar commercial real estate marketplace.</p>
         </div>
         <div className={styles['cta-content-part']}>
-          <form method="POST">
+          <form method="POST" onSubmit={handleSubmit}>
             <input type="hidden" name="oid" value="00D5f000006OVNu" />
             <input type="hidden" name="retURL" value={`${baseUrl}?success=true&cta=true`} />​
             {/* <!--  ----------------------------------------------------------------------  -->
@@ -76,6 +102,9 @@ const CTA = () => {
                   label="Description"
                   multiline
                   rows={4}
+                  InputProps={{
+                    required: false,
+                  }}
                   name="description"
                   type="text"
                   placeholder="Description"
@@ -87,16 +116,16 @@ const CTA = () => {
               <Link href="/privacy-and-cookies">privacy policy</Link> and to learn more about offers and
               promotions from Pillar.
             </p>
-            {success && (
-              <>
-                ​<h5>Your information has been received. A team member will reach out to you soon.</h5>
-                <br />
-              </>
-            )}
             <input className="ui-button secondary" type="submit" name="submit" value={'Submit'} />
           </form>
         </div>
       </div>
+      <Toast
+        open={success}
+        content={`Your information has been received.`}
+        //subContent={'A team member will reach out to you soon.'}
+        title="Message sent successfully"
+      />
     </section>
   );
 };

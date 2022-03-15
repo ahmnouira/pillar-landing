@@ -1,6 +1,7 @@
 .cta {
   background-color: #2a5865;
   color: white;
+  position: relative;
   &-content {
     display: flex;
     flex-wrap: wrap;
@@ -8,6 +9,8 @@
     padding: min(80px, 10%);
     justify-content: center;
     align-items: flex-start;
+    position: relative;
+
     &-part {
       flex: 0.5;
       margin: 0 min(40px, 5%);
