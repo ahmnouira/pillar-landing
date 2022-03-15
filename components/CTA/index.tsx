@@ -1,3 +1,4 @@
+import { Grid } from '@mui/material';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
@@ -42,38 +43,60 @@ const CTA = () => {
             <input type="hidden" name="debugEmail" value="steve@pillarmarkets.com" />
             <!--  ----------------------------------------------------------------------  --> */}
             {/* the code above is for testing */}
-            <TextField
-              id="first_name"
-              label="First Name"
-              inputProps={{ maxLength: 80 }}
-              name="first_name"
-              type="text"
-              placeholder="First Name"
-            />
-            <TextField
-              id="last_name"
-              label="Last Name"
-              inputProps={{ maxLength: 80 }}
-              name="last_name"
-              type="text"
-              placeholder="Last Name"
-            />
-            <TextField
-              id="company"
-              label="Company"
-              inputProps={{ maxLength: 40 }}
-              name="company"
-              type="text"
-              placeholder="Company"
-            />
-            <TextField
-              id="email"
-              label="Email"
-              inputProps={{ maxLength: 80 }}
-              name="email"
-              type="email"
-              placeholder="Email"
-            />
+            <Grid container spacing={2} columnSpacing={4}>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  id="first_name"
+                  label="First Name"
+                  inputProps={{ maxLength: 80 }}
+                  name="first_name"
+                  type="text"
+                  placeholder="First Name"
+                />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  id="last_name"
+                  label="Last Name"
+                  inputProps={{ maxLength: 80 }}
+                  name="last_name"
+                  type="text"
+                  placeholder="Last Name"
+                />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  id="company"
+                  label="Company"
+                  inputProps={{ maxLength: 40 }}
+                  name="company"
+                  type="text"
+                  placeholder="Company"
+                />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  id="email"
+                  label="Email"
+                  inputProps={{ maxLength: 80 }}
+                  name="email"
+                  type="email"
+                  placeholder="Email"
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  style={{ height: 'auto', color: 'white' }}
+                  id="description"
+                  label="Description"
+                  multiline
+                  rows={4}
+                  name="description"
+                  type="text"
+                  placeholder="Description"
+                />
+              </Grid>
+            </Grid>
             <p className={styles['small']}>
               By submitting your information, you agree to the{' '}
               <Link href="/privacy-and-cookies">privacy policy</Link> and to learn more about offers and
