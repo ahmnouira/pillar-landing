@@ -3,7 +3,7 @@ import { confidentialityMarkup } from 'utils';
 
 const ConfidentialityAgreement = () => {
   return (
-    <MainLayout darkNav>
+    <MainLayout>
       <div
         className="padding-wrapper policies"
         dangerouslySetInnerHTML={{ __html: confidentialityMarkup }}></div>

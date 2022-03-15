@@ -1,6 +1,4 @@
-import Image from 'next/image';
 import Link from 'next/link';
-import MenuIcon from '@mui/icons-material/Menu';
 import { useScrollTrigger } from '@mui/material';
 import classNames from 'classnames';
 import styles from './Navbar.module.scss';
@@ -8,12 +6,56 @@ import { handleMoveToId } from 'utils';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
-const Navbar: React.FC<any> = ({ dark = false, setOpen, logoColor = 'white' }) => {
+type Menu = {
+  text: string;
+  onClick?: () => void;
+};
+
+export type NavbarProps = {
+  dark?: boolean;
+  setOpen?: () => void;
+  logoColor?: string;
+  home?: boolean;
+};
+
+const Navbar: React.FC<NavbarProps> = ({
+  dark = false,
+  logoColor = 'black',
+  setOpen,
+  home = false,
+}: NavbarProps) => {
   const router = useRouter();
   const trigger = useScrollTrigger({
     disableHysteresis: true,
     threshold: 80,
   });
+
+  const menus: Menu[] = [
+    {
+      text: 'Solutions',
+      onClick: () => router.push('/sponsor'),
+    },
+    {
+      text: 'About us',
+      onClick: () => handleAboutUsClick(),
+    },
+    {
+      text: 'Careers',
+      onClick: () => router.push('/career'),
+    },
+    // {
+    //   text: 'Contact Us',
+    //   onClick: () => handleButtonClick(),
+    // },
+    {
+      text: 'Get Started',
+    },
+  ];
+
+  const handleAboutUsClick = () => {
+    router.pathname !== '/' && router.push('/?about=true');
+    router.pathname === '/' && handleMoveToId('about');
+  };
 
   const handleButtonClick = () => {
     router.pathname !== '/' && router.push('/?cta=true');
@@ -45,16 +87,32 @@ const Navbar: React.FC<any> = ({ dark = false, setOpen, logoColor = 'white' }) =
             </a>
           </Link>
         </div>
-        <div className={styles['navbar-content-box']}>
-          <button className={`ui-button primary ${styles['get-started']}`} onClick={handleButtonClick}>
-            Get Started
-          </button>
-        </div>
-        {/* Disable sidebar menu for now - KR Dec 29, 2021
+        {menus &&
+          menus.map((menu, idx) => {
+            const linkClass =
+              idx !== menus.length - 1
+                ? trigger || dark
+                  ? 'link-trigger'
+                  : 'link'
+                : trigger || dark
+                ? 'button-trigger'
+                : 'button';
+            const homeClass = home ? (trigger ? 'home-trigger' : 'home') : '';
+            return (
+              <div className={styles['navbar-content-box']} key={idx}>
+                <button
+                  className={`ui-button primary ${linkClass} ${homeClass}`}
+                  onClick={menu.onClick ?? handleButtonClick}>
+                  {menu.text}
+                </button>
+              </div>
+            );
+          })}
+      </div>
+      {/* Disable sidebar menu for now - KR Dec 29, 2021
         <div className={styles['sidebar-trigger']} onClick={setOpen}>
           <MenuIcon />
         </div> */}
-      </div>
     </nav>
   );
 };

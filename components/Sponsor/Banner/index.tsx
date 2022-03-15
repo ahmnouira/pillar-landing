@@ -1,3 +1,4 @@
+import { handleMoveToId } from 'utils';
 import styles from './Banner.module.scss';
 interface Props {
   imgSrc: string;
@@ -21,7 +22,9 @@ const Banner: React.FC<Props> = ({ imgSrc }) => {
           profiles, solving liquidity needs across the deal lifecycle.
         </p>
         <div className={styles['button-container']}>
-          <button className="ui-button-2 tertiary">SCHEDULE A CALL</button>
+          <button className="ui-button-2" onClick={() => handleMoveToId()}>
+            SCHEDULE A CALL
+          </button>
         </div>
       </div>
     </section>

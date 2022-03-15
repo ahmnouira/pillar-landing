@@ -3,7 +3,11 @@ import { privacyMarkup } from 'utils';
 
 const PrivacyPolicy = () => {
   return (
-    <MainLayout darkNav>
+    <MainLayout
+      navbarProps={{
+        logoColor: 'white',
+        dark: true,
+      }}>
       <div className="padding-wrapper policies" dangerouslySetInnerHTML={{ __html: privacyMarkup }}></div>
     </MainLayout>
   );

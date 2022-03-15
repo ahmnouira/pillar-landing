@@ -13,12 +13,16 @@ const Home: NextPage = () => {
 
   useEffect(() => {
     if (router.query.cta) {
-      handleMoveToId();
-    }
+      handleMoveToId('cta');
+    } else if (router.query.about) handleMoveToId('about');
   }, [router]);
 
   return (
-    <MainLayout>
+    <MainLayout
+      navbarProps={{
+        logoColor: 'white',
+        home: true,
+      }}>
       <Banner imgSrc="/hero.jpg" />
       <Pillars />
       <About />

@@ -8,7 +8,7 @@
     h6 {
       font-size: 14px;
       line-height: 20px;
-      color: #613ced;
+      color: #e72d65;
     }
 
     h3 {
@@ -31,27 +31,15 @@
       flex-direction: column;
       align-items: center;
       padding: 24px;
-      height: 326px;
+      height: 100%;
       width: 100%;
-
-      img {
-        margin-top: 50px;
-      }
-
-      h4 {
-        font-size: 14px;
-        line-height: 20px;
-        text-align: center;
-        color: #613ced;
-        margin: 24px 0;
-      }
 
       h2 {
         font-weight: 600;
         font-size: 24px;
         line-height: 30px;
         text-align: center;
-        margin-top: 8px;
+        margin-top: 24px;
         margin-bottom: 24px;
       }
 
@@ -85,14 +73,6 @@
         border-radius: 0px;
         padding: 0px;
         height: auto;
-        img {
-          margin-top: 0px;
-        }
-
-        h4 {
-          display: none;
-          margin: 0px;
-        }
 
         h2 {
           font-weight: 500;

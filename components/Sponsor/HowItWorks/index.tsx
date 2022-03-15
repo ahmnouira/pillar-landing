@@ -6,7 +6,7 @@ const HowItWorks: React.FC = () => {
 
   return (
     <section className={styles['how-it-works']}>
-      <h6>SPONSOR</h6>
+      {/* <h6>SPONSOR</h6> */}
       <h3>How it Works</h3>
 
       <div

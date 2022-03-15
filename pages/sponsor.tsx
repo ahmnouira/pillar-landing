@@ -7,9 +7,9 @@ import PillarSolution from 'components/Sponsor/PillarSolution';
 import Until from 'components/Sponsor/Until';
 import type { NextPage } from 'next';
 
-const Solution: NextPage = () => {
+const Sponsor: NextPage = () => {
   return (
-    <MainLayout logoColor="black">
+    <MainLayout>
       <Banner imgSrc="/sponsor/bg.png" />
       <Financial />
       <Until />
@@ -20,4 +20,4 @@ const Solution: NextPage = () => {
   );
 };
 
-export default Solution;
+export default Sponsor;
