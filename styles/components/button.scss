@@ -59,8 +59,32 @@
     border: none;
     height: auto;
     min-width: auto;
+    color: black;
     &:hover {
       background-color: transparent;
+    }
+  }
+
+  &.button {
+    color: black;
+    border: solid 2px black;
+    &:hover {
+      background-color: transparent;
+    }
+    &-trigger {
+      color: white;
+      border: solid 2px white;
+    }
+  }
+
+  &.home {
+    color: white;
+    border-color: white;
+    &-trigger {
+      background-color: transparent;
+    }
+    &:hover {
+      color: white;
     }
   }
 }

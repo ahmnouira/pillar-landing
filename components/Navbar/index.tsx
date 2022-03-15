@@ -15,9 +15,15 @@ export type NavbarProps = {
   dark?: boolean;
   setOpen?: () => void;
   logoColor?: string;
+  home?: boolean;
 };
 
-const Navbar: React.FC<NavbarProps> = ({ dark = true, setOpen, logoColor = 'white' }: NavbarProps) => {
+const Navbar: React.FC<NavbarProps> = ({
+  dark = false,
+  logoColor = 'black',
+  setOpen,
+  home = false,
+}: NavbarProps) => {
   const router = useRouter();
   const trigger = useScrollTrigger({
     disableHysteresis: true,
@@ -83,11 +89,19 @@ const Navbar: React.FC<NavbarProps> = ({ dark = true, setOpen, logoColor = 'whit
         </div>
         {menus &&
           menus.map((menu, idx) => {
-            const linkClass = idx !== menus.length - 1 ? (trigger || dark ? 'link-trigger' : 'link') : '';
+            const linkClass =
+              idx !== menus.length - 1
+                ? trigger || dark
+                  ? 'link-trigger'
+                  : 'link'
+                : trigger || dark
+                ? 'button-trigger'
+                : 'button';
+            const homeClass = home ? (trigger ? 'home-trigger' : 'home') : '';
             return (
               <div className={styles['navbar-content-box']} key={idx}>
                 <button
-                  className={`ui-button primary ${linkClass} ${styles['get-started']}`}
+                  className={`ui-button primary ${linkClass} ${homeClass}`}
                   onClick={menu.onClick ?? handleButtonClick}>
                   {menu.text}
                 </button>

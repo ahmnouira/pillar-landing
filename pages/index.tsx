@@ -20,7 +20,8 @@ const Home: NextPage = () => {
   return (
     <MainLayout
       navbarProps={{
-        dark: false,
+        logoColor: 'white',
+        home: true,
       }}>
       <Banner imgSrc="/hero.jpg" />
       <Pillars />

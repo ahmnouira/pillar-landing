@@ -9,10 +9,7 @@ import type { NextPage } from 'next';
 
 const Sponsor: NextPage = () => {
   return (
-    <MainLayout
-      navbarProps={{
-        logoColor: 'white',
-      }}>
+    <MainLayout>
       <Banner imgSrc="/sponsor/bg.png" />
       <Financial />
       <Until />

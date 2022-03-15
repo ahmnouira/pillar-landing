@@ -3,7 +3,11 @@ import { termsMarkup } from 'utils';
 
 const TermsOfService = () => {
   return (
-    <MainLayout>
+    <MainLayout
+      navbarProps={{
+        logoColor: 'white',
+        dark: true,
+      }}>
       <div className="padding-wrapper policies" dangerouslySetInnerHTML={{ __html: termsMarkup }}></div>
     </MainLayout>
   );
