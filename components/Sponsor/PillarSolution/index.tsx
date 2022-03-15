@@ -3,23 +3,23 @@ import { SolutionType } from 'types/solution';
 import styles from './PillarSolution.module.scss';
 import KeyOutlinedIcon from '@mui/icons-material/KeyOutlined';
 import PriceCheckIcon from '@mui/icons-material/PriceCheck';
-import CachedOutlinedIcon from '@mui/icons-material/CachedOutlined';
+import PublishedWithChangesOutlinedIcon from '@mui/icons-material/PublishedWithChangesOutlined';
 const solutions: SolutionType[] = [
   {
     title: 'Facilitate Efficient Access to Capital',
-    icon: <CachedOutlinedIcon htmlColor="magenta" />,
+    icon: <PublishedWithChangesOutlinedIcon htmlColor="#E72D65" />,
     content:
       'Depth and breadth of capital pool allows for timely execution along risk profiles and across the capital stack.',
   },
   {
     title: 'Owner Always Maintains Control',
-    icon: <KeyOutlinedIcon htmlColor="magenta" />,
+    icon: <KeyOutlinedIcon htmlColor="#E72D65" />,
     content:
       'Including all major capital decisions. No forced sales, no meddling LPs. Investors benefit from streamlined reporting and analytical tools.',
   },
   {
     title: 'All With Lower Fees',
-    icon: <PriceCheckIcon htmlColor="magenta" />,
+    icon: <PriceCheckIcon htmlColor="#E72D65" />,
     content:
       'Solve your needs while managing fees. Relative to competitors, we’re up to 75% cheaper - we focus on providing innovative solutions to real problems,  without reinventing the wheel.',
   },

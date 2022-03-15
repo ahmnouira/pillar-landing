@@ -1,26 +1,29 @@
 import { Grid } from '@mui/material';
 import styles from './Values.module.scss';
 import { ValueType } from 'types/value';
-
+import BorderClearOutlinedIcon from '@mui/icons-material/BorderClearOutlined';
+import EmojiPeopleOutlinedIcon from '@mui/icons-material/EmojiPeopleOutlined';
+import LocalPoliceOutlinedIcon from '@mui/icons-material/LocalPoliceOutlined';
+import StackedLineChartOutlinedIcon from '@mui/icons-material/StackedLineChartOutlined';
 const values: ValueType[] = [
   {
     title: 'Integrity',
-    icon: '/career/values/integrity.svg',
+    icon: <LocalPoliceOutlinedIcon htmlColor="#E72D65" />,
     subTitle: 'Do the right thing, every time.',
   },
   {
     title: 'Transparency',
-    icon: '/career/values/transparency.svg',
+    icon: <BorderClearOutlinedIcon htmlColor="#E72D65" />,
     subTitle: 'Be open, speak up.',
   },
   {
     title: 'Humility',
-    icon: '/career/values/humility.svg',
+    icon: <EmojiPeopleOutlinedIcon htmlColor="#E72D65" />,
     subTitle: 'No egos allowed.',
   },
   {
     title: 'Meritocracy',
-    icon: '/career/values/meritocracy.svg',
+    icon: <StackedLineChartOutlinedIcon htmlColor="#E72D65" />,
     subTitle: 'The best idea always wins.',
   },
 ];
@@ -37,7 +40,7 @@ const Values = () => {
           {values.map((value, index) => (
             <Grid item xs={12} sm={12} md={3} lg={3} key={index}>
               <div className={styles['value-item']}>
-                <img src={value.icon} alt={value.title} />
+                {value.icon}
                 <h3>{value.title}</h3>
                 <p>{value.subTitle}</p>
               </div>
