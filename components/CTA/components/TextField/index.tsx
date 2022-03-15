@@ -2,24 +2,21 @@ import { styled, TextField as MuiTextField, TextFieldProps } from '@mui/material
 import React from 'react';
 
 const StyledTextField = styled(MuiTextField)`
-  height: 30px;
-  color: #fff;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 15px;
-  font-family: 'IBM Plex Sans';
-  margin-bottom: 24px;
-
-  &.MuiInput-root {
+  &.MuiInputBase-root {
     color: #fff;
-  }
-
-  &:hover fieldset {
-    border-color: #fff;
-  }
-
-  &.MuiInput-root:hover:not(.Mui-disabled):before {
-    border-color: #fff;
+    &.MuiInput-root {
+      color: #fff;
+      height: 30px;
+      color: #fff;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 15px;
+      font-family: 'IBM Plex Sans';
+      margin-bottom: 24px;
+    }
+    &:hover {
+      border-color: #fff;
+    }
   }
 
   & .MuiInput-underline {
@@ -30,7 +27,7 @@ const StyledTextField = styled(MuiTextField)`
     &::before {
       border-color: #fff;
     }
-    &:hover {
+    &:active {
       border-color: #fff;
     }
   }
@@ -46,18 +43,6 @@ const StyledTextField = styled(MuiTextField)`
     color: #fff;
     &.Mui-focused {
       color: #fff;
-    }
-  }
-
-  & .MuiOutlinedInput-root {
-    & fieldset {
-      border-color: #fff;
-    }
-    &:hover fieldset {
-      border-color: #fff;
-    }
-    &.Mui-focused fieldset {
-      border-color: #fff;
     }
   }
 `;
