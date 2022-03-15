@@ -24,11 +24,20 @@ a {
 }
 
 // mui class
-.css-68u1dt-MuiInputBase-root-MuiInput-root {
+.MuiInputBase-root {
   color: white;
   font-weight: 400;
   font-size: 12px;
   line-height: 15px;
+  border-color: #fff;
+}
+
+.MuiInput-root {
+  color: white;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  border-color: #fff;
 }
 
 @media screen and (max-width: 600px) {
