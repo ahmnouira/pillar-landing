@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import TextField from './components/TextField';
 import styles from './CTA.module.scss';
 
 const CTA = () => {
@@ -41,40 +42,36 @@ const CTA = () => {
             <input type="hidden" name="debugEmail" value="steve@pillarmarkets.com" />
             <!--  ----------------------------------------------------------------------  --> */}
             {/* the code above is for testing */}
-            <input
+            <TextField
               id="first_name"
-              required
-              maxLength={40}
+              label="First Name"
+              inputProps={{ maxLength: 80 }}
               name="first_name"
-              size={20}
               type="text"
               placeholder="First Name"
             />
-            <input
+            <TextField
               id="last_name"
-              required
-              maxLength={80}
+              label="Last Name"
+              inputProps={{ maxLength: 80 }}
               name="last_name"
-              size={20}
               type="text"
               placeholder="Last Name"
             />
-            <input
+            <TextField
               id="company"
-              maxLength={40}
+              label="Company"
+              inputProps={{ maxLength: 40 }}
               name="company"
-              size={20}
               type="text"
-              required
               placeholder="Company"
             />
-            <input
+            <TextField
               id="email"
-              required
-              maxLength={80}
+              label="Email"
+              inputProps={{ maxLength: 80 }}
               name="email"
-              size={20}
-              type="text"
+              type="email"
               placeholder="Email"
             />
             <p className={styles['small']}>
