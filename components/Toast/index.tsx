@@ -11,7 +11,7 @@ type ToastProps = {
 
 const Toast = ({ open, title, content }: ToastProps) => {
   return (
-    <Slide direction="right" in={open} mountOnEnter unmountOnExit>
+    <Slide direction="left" in={open} mountOnEnter unmountOnExit>
       <div className={styles.toast}>
         <div className={styles['toast-row']}>
           <div>

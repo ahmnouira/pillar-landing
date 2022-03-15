@@ -18,7 +18,7 @@ const CTA = () => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setSuccess(false);
-    }, 8000);
+    }, 5000);
     return () => {
       clearTimeout(timeout);
     };
