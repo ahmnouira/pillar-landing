@@ -86,14 +86,17 @@ const CTA = () => {
               </Grid>
               <Grid item xs={12}>
                 <TextField
-                  style={{ height: 'auto', color: 'white' }}
+                  style={{ height: 'auto', color: '#fff' }}
                   id="description"
                   label="Description"
+                  inputProps={{
+                    color: '#fff',
+                  }}
                   multiline
                   rows={4}
                   name="description"
                   type="text"
-                  placeholder="Description"
+                  placeholder={'Description'.toUpperCase()}
                 />
               </Grid>
             </Grid>
