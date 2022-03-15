@@ -4,12 +4,15 @@ import React from 'react';
 const StyledTextField = styled(MuiTextField)`
   height: 30px;
   color: #fff;
-  font-size: 15px;
   font-weight: 400;
   font-size: 12px;
   line-height: 15px;
   font-family: 'IBM Plex Sans';
   margin-bottom: 24px;
+
+  &.MuiInput-root {
+    color: #fff;
+  }
 
   &:hover fieldset {
     border-color: #fff;
