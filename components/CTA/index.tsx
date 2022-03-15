@@ -9,21 +9,6 @@ const CTA = () => {
   const router = useRouter();
   const [success, setSuccess] = useState(false);
   const [baseUrl, setBaseUrl] = useState('');
-  const salesforceUrl = 'https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8';
-
-  useEffect(() => {
-    setBaseUrl(
-      typeof window !== 'undefined' && window.location.origin
-        ? window.location.origin
-        : 'https://www.pillarmarkets.com'
-    );
-
-    setSuccess(router.query.success ? true : false);
-
-    setTimeout(() => {
-      setSuccess(false);
-    }, 60000);
-  }, [router]);
 
   return (
     <section id="cta" className={styles['cta']}>
@@ -33,7 +18,7 @@ const CTA = () => {
           <p>Speak to a team member to learn more about the Pillar commercial real estate marketplace.</p>
         </div>
         <div className={styles['cta-content-part']}>
-          <form action={salesforceUrl} method="POST">
+          <form method="POST">
             <input type="hidden" name="oid" value="00D5f000006OVNu" />
             <input type="hidden" name="retURL" value={`${baseUrl}?success=true&cta=true`} />​
             {/* <!--  ----------------------------------------------------------------------  -->
