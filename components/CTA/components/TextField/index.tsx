@@ -63,7 +63,16 @@ const StyledTextField = styled(MuiTextField)`
 `;
 
 const TextField: React.FC<TextFieldProps> = (props: TextFieldProps) => {
-  return <StyledTextField variant="standard" fullWidth {...props} />;
+  return (
+    <StyledTextField
+      variant="standard"
+      fullWidth
+      InputProps={{
+        required: true,
+      }}
+      {...props}
+    />
+  );
 };
 
 export default TextField;
