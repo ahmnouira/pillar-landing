@@ -33,3 +33,11 @@
     }
   }
 }
+
+@media screen and (max-width: 912px) {
+  .toast {
+    right: 16px;
+    top: 16px;
+    left: 16px;
+  }
+}

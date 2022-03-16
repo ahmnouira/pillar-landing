@@ -30,6 +30,15 @@ const CTA = () => {
   };
 
   useEffect(() => {
+    const timeout = setTimeout(() => {
+      setSuccess(false);
+    }, 3000);
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [success]);
+
+  useEffect(() => {
     setBaseUrl(
       typeof window !== 'undefined' && window.location.origin
         ? window.location.origin
@@ -37,10 +46,6 @@ const CTA = () => {
     );
 
     setSuccess(router.query.success ? true : false);
-
-    setTimeout(() => {
-      setSuccess(false);
-    }, 60000);
   }, [router]);
 
   return (
@@ -121,7 +126,8 @@ const CTA = () => {
                       color: '#fff',
                     }}
                     multiline
-                    rows={3}
+                    minRows={2}
+                    maxRows={7}
                     InputProps={{
                       required: false,
                       disableUnderline: true,
