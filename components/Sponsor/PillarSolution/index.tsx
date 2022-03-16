@@ -7,19 +7,19 @@ import CachedOutlinedIcon from '@mui/icons-material/CachedOutlined';
 const solutions: SolutionType[] = [
   {
     title: 'Facilitate Efficient Access to Capital',
-    icon: <CachedOutlinedIcon htmlColor="#e72d65" />,
+    icon: <CachedOutlinedIcon htmlColor="#613CED" />,
     content:
       'Depth and breadth of capital pool allows for timely execution along risk profiles and across the capital stack.',
   },
   {
     title: 'Owner Always Maintains Control',
-    icon: <KeyOutlinedIcon htmlColor="#e72d65" />,
+    icon: <KeyOutlinedIcon htmlColor="#613CED" />,
     content:
       'Including all major capital decisions. No forced sales, no meddling LPs. Investors benefit from streamlined reporting and analytical tools.',
   },
   {
     title: 'All With Lower Fees',
-    icon: <PriceCheckIcon htmlColor="#e72d65" />,
+    icon: <PriceCheckIcon htmlColor="#613CED" />,
     content:
       'Solve your needs while managing fees. Relative to competitors, we’re up to 75% cheaper - we focus on providing innovative solutions to real problems,  without reinventing the wheel.',
   },
