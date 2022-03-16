@@ -14,9 +14,9 @@ import { useRouter } from 'next/router';
 
 const options = [
   { title: 'Get Started' },
-  { title: 'Terms of Service', link: '/terms-of-service' },
-  { title: 'Privacy and Cookies', link: '/privacy-and-cookies' },
-  { title: 'Confidentiality agreement', link: '/confidentiality-agreement' },
+  { title: 'Solutions', link: '/sponsor' },
+  { title: 'About Us', link: '/?about=true' },
+  { title: 'Careers', link: '/career' },
 ];
 
 const Sidebar: React.FC<any> = ({ setOpen, open }) => {
