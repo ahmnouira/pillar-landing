@@ -1,3 +1,4 @@
+import useMediaQuery from '@mui/material/useMediaQuery';
 import CTA from 'components/CTA';
 import MainLayout from 'components/Layouts/MainLayout';
 import Banner from 'components/Sponsor/Banner';
@@ -9,6 +10,8 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 
 const Sponsor: NextPage = () => {
+  const matches = useMediaQuery('(max-width:912px)');
+
   return (
     <MainLayout>
       <Head>
@@ -18,7 +21,7 @@ const Sponsor: NextPage = () => {
           content="Learn about recapitalization and other capital solutions serving the liquidity needs of real estate sponsors and their investors."
         />
       </Head>
-      <Banner imgSrc="/sponsor/bg.png" />
+      <Banner imgSrc={`/sponsor/${matches ? 'mobile-bg' : 'bg'}.png`} />
       <Financial />
       <Until />
       <PillarSolution />
