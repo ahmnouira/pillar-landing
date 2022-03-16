@@ -13,7 +13,11 @@ const Sponsor: NextPage = () => {
   const matches = useMediaQuery('(max-width:912px)');
 
   return (
-    <MainLayout>
+    <MainLayout
+      navbarProps={{
+        dark: matches,
+        logoColor: matches ? 'white' : 'black',
+      }}>
       <Head>
         <title>Capital Solutions for Real Estate Sponsors - Pillar Markets</title>
         <meta
