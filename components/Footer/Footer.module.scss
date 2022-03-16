@@ -28,6 +28,24 @@
       }
     }
   }
+
+  &-disclaimer {
+    display: flex;
+    border-top: 1px solid rgb(136, 140, 147);
+    border-bottom: 1px solid rgb(136, 140, 147);
+    margin: 40px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    font-size: 14px;
+    justify-content: left;
+    align-items: left;
+    color: gray;
+    text-align: left;
+    a {
+      text-decoration: underline;
+    }
+  }
+
   footer {
     padding: 10px;
     display: flex;

@@ -2,39 +2,32 @@ import { Grid } from '@mui/material';
 import Toast from 'components/Toast';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import EmailIcon from '@mui/icons-material/Email';
 import { FormEvent, useEffect, useState } from 'react';
 import TextField from './components/TextField';
 import styles from './CTA.module.scss';
-
 const CTA = () => {
   const router = useRouter();
   const [success, setSuccess] = useState(false);
   const [baseUrl, setBaseUrl] = useState('');
-
+  const salesforceUrl = 'https://webto.salesforce.com/test/test.WebToLead?encoding=UTF-8';
   const toggleTost = () => {
     setSuccess((value) => !value);
   };
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
+    setBaseUrl(
+      typeof window !== 'undefined' && window.location.origin
+        ? window.location.origin
+        : 'https://www.test.com'
+    );
+
+    setSuccess(router.query.success ? true : false);
+
+    setTimeout(() => {
       setSuccess(false);
-    }, 5000);
-    return () => {
-      clearTimeout(timeout);
-    };
-  }, [success]);
-
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    event.stopPropagation();
-
-    try {
-      toggleTost();
-    } catch (error) {
-      console.log(error);
-    } finally {
-    }
-  };
+    }, 60000);
+  }, [router]);
 
   return (
     <section id="cta" className={styles['cta']}>
@@ -42,9 +35,16 @@ const CTA = () => {
         <div className={styles['cta-content-part']}>
           <h4>Connect With Us</h4>
           <p>Speak to a team member to learn more about the Pillar commercial real estate marketplace.</p>
+
+          <div style={{ display: 'flex', alignItems: 'center', marginTop: '30px' }}>
+            <EmailIcon />
+            <span style={{ marginLeft: '20px' }}>
+              <a href="mailto:info@pillarmarkets.com">info@pillarmarkets.com</a>
+            </span>
+          </div>
         </div>
         <div className={styles['cta-content-part']}>
-          <form method="POST" onSubmit={handleSubmit}>
+          <form action={salesforceUrl} method="POST">
             <input type="hidden" name="oid" value="00D5f000006OVNu" />
             <input type="hidden" name="retURL" value={`${baseUrl}?success=true&cta=true`} />​
             {/* <!--  ----------------------------------------------------------------------  -->
@@ -125,7 +125,7 @@ const CTA = () => {
       </div>
       <Toast
         open={success}
-        content={`Your information has been received.`}
+        content="Your information has been received. A team member will reach out to you soon."
         //subContent={'A team member will reach out to you soon.'}
         title="Message sent successfully"
       />

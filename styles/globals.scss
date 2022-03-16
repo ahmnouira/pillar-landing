@@ -40,6 +40,10 @@ a {
   border-color: #fff;
 }
 
+.MuiInputBase-inputMultiline {
+  color: white !important;
+}
+
 @media screen and (max-width: 600px) {
   .padding-wrapper {
     padding: 24px;

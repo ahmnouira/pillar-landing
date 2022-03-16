@@ -23,7 +23,7 @@
   &-content {
     z-index: 2;
     margin-top: 60px;
-    max-width: min(100%, 956px);
+    max-width: min(100%, 1024px);
     .button-container {
       margin-top: 32px;
     }
@@ -68,7 +68,7 @@
   }
 }
 
-@media screen and (max-width: 912px) {
+@media screen and (max-width: 600px) {
   .banner {
     &-content {
       margin-top: 50%;
@@ -88,4 +88,17 @@
   }
 }
 @media screen and (max-width: 900px) and (orientation: landscape) {
+  .banner {
+    p {
+      &.large {
+        font-size: 14px !important;
+        line-height: 16px !important;
+        margin-bottom: 16px !important;
+      }
+    }
+    h1 {
+      font-size: 2rem;
+      line-height: 40px;
+    }
+  }
 }

@@ -1,4 +1,5 @@
 import MainLayout from 'components/Layouts/MainLayout';
+import Head from 'next/head';
 import { privacyMarkup } from 'utils';
 
 const PrivacyPolicy = () => {
@@ -8,6 +9,9 @@ const PrivacyPolicy = () => {
         logoColor: 'white',
         dark: true,
       }}>
+      <Head>
+        <title>Privacy Policy - Pillar Markets</title>
+      </Head>
       <div className="padding-wrapper policies" dangerouslySetInnerHTML={{ __html: privacyMarkup }}></div>
     </MainLayout>
   );
