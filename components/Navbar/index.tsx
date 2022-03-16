@@ -9,6 +9,7 @@ import { useEffect, useState } from 'react';
 type Menu = {
   text: string;
   onClick?: () => void;
+  path: string;
 };
 
 export type NavbarProps = {
@@ -34,14 +35,17 @@ const Navbar: React.FC<NavbarProps> = ({
     {
       text: 'Solutions',
       onClick: () => router.push('/sponsor'),
+      path: '/sponsor',
     },
     {
       text: 'About us',
       onClick: () => handleAboutUsClick(),
+      path: '/?about=true',
     },
     {
       text: 'Careers',
       onClick: () => router.push('/career'),
+      path: '/career',
     },
     // {
     //   text: 'Contact Us',
@@ -49,6 +53,7 @@ const Navbar: React.FC<NavbarProps> = ({
     // },
     {
       text: 'Get Started',
+      path: '/?cta=true',
     },
   ];
 
@@ -100,11 +105,11 @@ const Navbar: React.FC<NavbarProps> = ({
             const homeClass = home ? (trigger ? 'home-trigger' : 'home') : '';
             return (
               <div className={styles['navbar-content-box']} key={idx}>
-                <button
-                  className={`ui-button primary ${linkClass} ${homeClass}`}
-                  onClick={menu.onClick ?? handleButtonClick}>
-                  {menu.text}
-                </button>
+                <Link href={menu.path} passHref>
+                  <a>
+                    <button className={`ui-button primary ${linkClass} ${homeClass}`}>{menu.text}</button>
+                  </a>
+                </Link>
               </div>
             );
           })}

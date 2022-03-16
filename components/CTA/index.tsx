@@ -104,7 +104,7 @@ const CTA = () => {
                     color: '#fff',
                   }}
                   multiline
-                  rows={4}
+                  rows={3}
                   InputProps={{
                     required: false,
                   }}
