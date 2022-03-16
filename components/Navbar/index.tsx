@@ -5,7 +5,7 @@ import styles from './Navbar.module.scss';
 import { handleMoveToId } from 'utils';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-
+import MenuIcon from '@mui/icons-material/Menu';
 type Menu = {
   text: string;
   onClick?: () => void;
@@ -92,32 +92,33 @@ const Navbar: React.FC<NavbarProps> = ({
             </a>
           </Link>
         </div>
-        {menus &&
-          menus.map((menu, idx) => {
-            const linkClass =
-              idx !== menus.length - 1
-                ? trigger || dark
-                  ? 'link-trigger'
-                  : 'link'
-                : trigger || dark
-                ? 'button-trigger'
-                : 'button';
-            const homeClass = home ? (trigger ? 'home-trigger' : 'home') : '';
-            return (
-              <div className={styles['navbar-content-box']} key={idx}>
-                <Link href={menu.path} passHref>
-                  <a>
-                    <button className={`ui-button primary ${linkClass} ${homeClass}`}>{menu.text}</button>
-                  </a>
-                </Link>
-              </div>
-            );
-          })}
+        <div className={styles['sidebar-desktop']}>
+          {menus &&
+            menus.map((menu, idx) => {
+              const linkClass =
+                idx !== menus.length - 1
+                  ? trigger || dark
+                    ? 'link-trigger'
+                    : 'link'
+                  : trigger || dark
+                  ? 'button-trigger'
+                  : 'button';
+              const homeClass = home ? (trigger ? 'home-trigger' : 'home') : '';
+              return (
+                <div className={styles['navbar-content-box']} key={idx}>
+                  <Link href={menu.path} passHref>
+                    <a>
+                      <button className={`ui-button primary ${linkClass} ${homeClass}`}>{menu.text}</button>
+                    </a>
+                  </Link>
+                </div>
+              );
+            })}
+        </div>
       </div>
-      {/* Disable sidebar menu for now - KR Dec 29, 2021
-        <div className={styles['sidebar-trigger']} onClick={setOpen}>
-          <MenuIcon />
-        </div> */}
+      <div className={styles['sidebar-trigger']} onClick={setOpen}>
+        <MenuIcon style={{ fontSize: 30 }} />
+      </div>
     </nav>
   );
 };
