@@ -14,11 +14,9 @@ const StyledTextField = styled(MuiTextField)`
       font-family: 'IBM Plex Sans';
       margin-bottom: 24px;
     }
-    &:hover {
-      border-color: #fff;
-    }
   }
 
+  /*
   & .MuiInput-underline {
     border-color: #fff;
     &::after {
@@ -30,13 +28,15 @@ const StyledTextField = styled(MuiTextField)`
     &:active {
       border-color: #fff;
     }
-  }
+    &:hover {
+      border-color: #fff;
+    }
+  }*/
 
   input {
     color: #fff;
     height: 30px;
     padding-bottom: 2px;
-    border-color: #fff;
   }
 
   label {
@@ -49,14 +49,18 @@ const StyledTextField = styled(MuiTextField)`
 
 const TextField: React.FC<TextFieldProps> = (props: TextFieldProps) => {
   return (
-    <StyledTextField
-      variant="standard"
-      fullWidth
-      InputProps={{
-        required: true,
-      }}
-      {...props}
-    />
+    <div style={{ borderBottom: '1px solid white' }}>
+      <StyledTextField
+        variant="standard"
+        fullWidth
+        color="secondary" // just force to white color
+        InputProps={{
+          required: true,
+          disableUnderline: true,
+        }}
+        {...props}
+      />
+    </div>
   );
 };
 
