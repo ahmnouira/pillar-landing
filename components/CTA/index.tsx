@@ -24,6 +24,7 @@ const CTA = () => {
   const [success, setSuccess] = useState(false);
   const [baseUrl, setBaseUrl] = useState('');
   const salesforceUrl = 'https://webto.salesforce.com/test/test.WebToLead?encoding=UTF-8';
+
   const toggleTost = () => {
     setSuccess((value) => !value);
   };
@@ -58,7 +59,7 @@ const CTA = () => {
         </div>
         <ThemeProvider theme={theme}>
           <div className={styles['cta-content-part']}>
-            <form action={salesforceUrl} method="POST">
+            <form action={salesforceUrl} method="POST" target="_blank">
               <input type="hidden" name="oid" value="00D5f000006OVNu" />
               <input type="hidden" name="retURL" value={`${baseUrl}?success=true&cta=true`} />​
               {/* <!--  ----------------------------------------------------------------------  -->
@@ -136,7 +137,13 @@ const CTA = () => {
                 <Link href="/privacy-and-cookies">privacy policy</Link> and to learn more about offers and
                 promotions from Pillar.
               </p>
-              <input className="ui-button secondary" type="submit" name="submit" value={'Submit'} />
+              <input
+                className="ui-button secondary"
+                type="submit"
+                name="submit"
+                value={'Submit'}
+                onClick={() => toggleTost()}
+              />
             </form>
           </div>
         </ThemeProvider>
