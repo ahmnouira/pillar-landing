@@ -14,11 +14,7 @@
     margin: 16px 0;
   }
 
-  &-mobile {
-    display: none;
-  }
-
-  small {
+  h6 {
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
@@ -126,34 +122,82 @@
   .how-it-works {
     background: #fafafa;
     padding: 0;
-    padding-top: 64px;
+    padding-top: 32px;
     padding-right: 16px;
     padding-left: 16px;
-    padding-bottom: 72px;
+    padding-bottom: 48px;
     h3 {
       font-size: 32px;
       line-height: 38px;
+      text-align: center;
+    }
+    h6 {
+      text-align: center;
     }
 
-    &-mobile {
-      display: block;
-      overflow: hidden;
-      height: 120px;
-      width: 100%;
-      background-size: cover;
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-color: white;
+    > p {
+      margin-top: 48px;
+      margin-right: 16px;
+      margin-left: 16px;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 26px;
+      text-align: center;
     }
-
-    h6,
-    p,
-    small {
-      display: none;
-    }
-
     &-cards {
-      display: none;
+      margin-top: 32px;
+      flex-direction: column;
+      &-small {
+        padding: 24px;
+        width: 100%;
+        h4 {
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 26px;
+        }
+        p {
+          margin-top: 32px;
+          font-size: 14px;
+          line-height: 20px;
+          width: 100%;
+          text-align: left;
+        }
+      }
+
+      &-icon {
+        margin: 16px 0px;
+      }
+
+      &-large {
+        padding: 24px;
+
+        h4 {
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 26px;
+        }
+        &-row {
+          margin: 0px;
+          margin-top: 32px;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          width: 100%;
+          p {
+            margin: 0px;
+            padding: 16px;
+            width: 100%;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20px;
+            height: auto;
+            text-align: left;
+          }
+          &-icon {
+            margin: 20px 0px;
+          }
+        }
+      }
     }
   }
 }
