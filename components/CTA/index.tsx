@@ -5,7 +5,7 @@ import Toast from 'components/Toast';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import EmailIcon from '@mui/icons-material/Email';
-import { FormEvent, useEffect, useState } from 'react';
+import { FormEvent, useEffect, useReducer, useState } from 'react';
 import TextField from './components/TextField';
 import styles from './CTA.module.scss';
 
@@ -19,11 +19,42 @@ const theme = createTheme({
   },
 });
 
+type FormState = {
+  first_name: string;
+  last_name: string;
+  company: string;
+  email: string;
+  description: string;
+};
+
+const initState: FormState = {
+  first_name: '',
+  last_name: '',
+  company: '',
+  email: '',
+  description: '',
+};
+
+type Action = {
+  payload: string;
+  name: string;
+};
+
+const formReducer = (state: FormState, action: Action): FormState => {
+  return {
+    ...state,
+    [action.name]: action.payload,
+  };
+};
+
 const CTA = () => {
   const router = useRouter();
   const [success, setSuccess] = useState(false);
   const [baseUrl, setBaseUrl] = useState('');
   const salesforceUrl = 'https://webto.salesforce.com/test/test.WebToLead?encoding=UTF-8';
+
+  const [form, setForm] = useReducer(formReducer, initState);
+
   const toggleTost = () => {
     setSuccess((value) => !value);
   };
@@ -46,6 +77,22 @@ const CTA = () => {
 
     setSuccess(router.query.success ? true : false);
   }, [router]);
+
+  const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>, name: string) => {
+    setForm({
+      name,
+      payload: event.target.value,
+    });
+  };
+
+  const handleSubmit = () => {
+    const { first_name, last_name, company, description, email } = form;
+    if (!first_name || !last_name || !company || !email) {
+      return;
+    }
+    console.log('formData', form);
+    toggleTost();
+  };
 
   return (
     <section id="cta" className={styles['cta']}>
@@ -81,6 +128,8 @@ const CTA = () => {
                     inputProps={{ maxLength: 80 }}
                     name="first_name"
                     type="text"
+                    value={form.first_name}
+                    onChange={(event) => handleChange(event, 'first_name')}
                     placeholder="First Name"
                   />
                 </Grid>
@@ -92,6 +141,8 @@ const CTA = () => {
                     name="last_name"
                     color="secondary"
                     type="text"
+                    value={form.last_name}
+                    onChange={(event) => handleChange(event, 'last_name')}
                     placeholder="Last Name"
                   />
                 </Grid>
@@ -102,6 +153,8 @@ const CTA = () => {
                     inputProps={{ maxLength: 40 }}
                     name="company"
                     type="text"
+                    value={form.company}
+                    onChange={(event) => handleChange(event, 'company')}
                     placeholder="Company"
                   />
                 </Grid>
@@ -112,6 +165,8 @@ const CTA = () => {
                     inputProps={{ maxLength: 80 }}
                     name="email"
                     type="email"
+                    value={form.email}
+                    onChange={(event) => handleChange(event, 'email')}
                     placeholder="Email"
                   />
                 </Grid>
@@ -121,6 +176,8 @@ const CTA = () => {
                     style={{ height: 'auto', color: '#fff' }}
                     id="description"
                     label="Message"
+                    value={form.description}
+                    onChange={(event) => handleChange(event, 'description')}
                     inputProps={{
                       color: '#fff',
                     }}
@@ -147,7 +204,7 @@ const CTA = () => {
                 type="submit"
                 name="submit"
                 value={'Submit'}
-                onClick={() => toggleTost()}
+                onClick={() => handleSubmit()}
               />
             </form>
           </div>

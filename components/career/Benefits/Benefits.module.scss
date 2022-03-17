@@ -16,11 +16,6 @@
       margin-top: 35px;
     }
 
-    h6 {
-      font-size: 14px;
-      line-height: 20px;
-      color: #e72d65;
-    }
     h1 {
       margin: 8px 0 40px;
       font-weight: 500;
@@ -44,7 +39,8 @@
 @media screen and (max-width: 600px) {
   .benefits {
     &-hero {
-      display: none;
+      width: 100%;
+      height: 250px;
     }
 
     &-content {
@@ -52,12 +48,8 @@
       .button-container {
         display: none;
       }
-      h6 {
-        font-size: 12px;
-        line-height: 15px;
-      }
       h1 {
-        margin: 16px 0 32px;
+        margin: 0px 0px 32px;
         font-size: 24px;
         line-height: 30px;
       }
