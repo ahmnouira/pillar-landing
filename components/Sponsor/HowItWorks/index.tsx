@@ -1,12 +1,8 @@
-import { useMediaQuery } from '@mui/material';
 import styles from './HowItWorks.module.scss';
 
 const HowItWorks: React.FC = () => {
-  const matches = useMediaQuery('(max-width:600px)');
-
   return (
     <section className={styles['how-it-works']}>
-      {/* <h6>SPONSOR</h6> */}
       <h3>How it Works</h3>
       <h6>Our process for owners of institutional-quality assets</h6>
       <p>
