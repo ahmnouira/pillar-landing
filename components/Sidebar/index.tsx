@@ -16,7 +16,7 @@ import { useRouter } from 'next/router';
 
 const options = [
   { title: 'Get Started' },
-  { title: 'Solutions', link: '/sponsor' },
+  { title: 'Sponsors', link: '/sponsor' },
   { title: 'About us', link: '/?about=true' },
   { title: 'Careers', link: '/career' },
 ];
