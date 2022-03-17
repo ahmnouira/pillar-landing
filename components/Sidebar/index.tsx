@@ -15,7 +15,6 @@ import { useRouter } from 'next/router';
 const options = [
   { title: 'Get Started' },
   { title: 'Solutions', link: '/sponsor' },
-  { title: 'About Us', link: '/?about=true' },
   { title: 'Careers', link: '/career' },
 ];
 
@@ -32,13 +31,13 @@ const Sidebar: React.FC<any> = ({ setOpen, open }) => {
       <List>
         {options.map((option, index) => (
           <ListItem button key={index}>
-            <ListItemIcon>
+            {/* <ListItemIcon>
               <>
                 {index === 1 && <TextSnippetIcon />}
                 {index === 2 && <SecurityIcon />}
                 {index === 3 && <LockIcon />}
               </>
-            </ListItemIcon>
+            </ListItemIcon> */}
             <ListItemText>
               {option.link ? (
                 <Link href={option.link}>

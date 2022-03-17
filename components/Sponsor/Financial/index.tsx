@@ -8,20 +8,20 @@ import AccessibilityNewOutlinedIcon from '@mui/icons-material/AccessibilityNewOu
 const financial: FinancialType[] = [
   {
     title: 'Portfolio Management',
-    icon: <PieChartOutlineOutlinedIcon htmlColor="#613CED" />,
+    icon: <PieChartOutlineOutlinedIcon htmlColor="#e72d65" />,
 
     content: 'Monetize a portion of gains to manage portfolio risk and/or recycle capital',
   },
   {
     title: 'Tax & Estate Planning',
-    icon: <ReceiptLongOutlinedIcon htmlColor="#613CED" />,
+    icon: <ReceiptLongOutlinedIcon htmlColor="#e72d65" />,
 
     content:
       'Including all major capital decisions. No forced sales, no meddling LPs. Investors benefit from streamlined reporting and analytical tools.',
   },
   {
     title: 'Investor Relations',
-    icon: <AccessibilityNewOutlinedIcon htmlColor="#613CED" />,
+    icon: <AccessibilityNewOutlinedIcon htmlColor="#e72d65" />,
     content: 'Maintain strong LP relationships by offering  liquidity independent of a sale',
   },
 ];

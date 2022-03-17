@@ -7,12 +7,13 @@ import Head from 'next/head';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
 const Career: NextPage = () => {
-  const matches = useMediaQuery('(max-width:912px)');
+  // const matches = useMediaQuery('(max-width:912px)');
 
   return (
     <MainLayout
       navbarProps={{
-        logoColor: matches ? 'white' : 'black',
+        // logoColor: matches ? 'white' : 'black',
+        logoColor: 'black',
       }}>
       <Head>
         <title>Careers - Pillar Markets</title>

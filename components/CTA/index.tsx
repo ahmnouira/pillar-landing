@@ -24,7 +24,6 @@ const CTA = () => {
   const [success, setSuccess] = useState(false);
   const [baseUrl, setBaseUrl] = useState('');
   const salesforceUrl = 'https://webto.salesforce.com/test/test.WebToLead?encoding=UTF-8';
-
   const toggleTost = () => {
     setSuccess((value) => !value);
   };
@@ -121,7 +120,7 @@ const CTA = () => {
                     color="secondary"
                     style={{ height: 'auto', color: '#fff' }}
                     id="description"
-                    label="Description"
+                    label="Message"
                     inputProps={{
                       color: '#fff',
                     }}
@@ -134,7 +133,7 @@ const CTA = () => {
                     }}
                     name="description"
                     type="text"
-                    placeholder={'Description'.toUpperCase()}
+                    placeholder={'Message'.toUpperCase()}
                   />
                 </Grid>
               </Grid>

@@ -28,9 +28,9 @@ const Until: React.FC = () => {
               <div>
                 <img src="/sponsor/users.svg"></img>
               </div>
-              <p>LOREM IPSUM</p>
+              <p>Then</p>
             </div>
-            <h1>Until Now</h1>
+            <h1>Status Quo</h1>
             {untilNow.map((el, idx) => (
               <div key={idx} className={styles['until-now-item']}>
                 <img src={`/sponsor/${matches ? 'remove.svg' : 'arrow-left.svg'}`} alt="plus-icon" />
@@ -45,7 +45,7 @@ const Until: React.FC = () => {
               <div>
                 <img src="/sponsor/users.svg"></img>
               </div>
-              <p>LOREM IPSUM</p>
+              <p>Now</p>
             </div>
             <h1 className={styles['right']}>With Pillar</h1>
             {withPillar.map((el, idx) => (

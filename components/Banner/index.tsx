@@ -16,7 +16,7 @@ const Banner: React.FC<Props> = ({ imgSrc }) => {
           optimized.
         </p>
         <div className={styles['button-container']}>
-          <button className="ui-button secondary" onClick={() => handleMoveToId()}>
+          <button className="ui-button-2 primary" onClick={() => handleMoveToId()}>
             Get Started
           </button>
         </div>
