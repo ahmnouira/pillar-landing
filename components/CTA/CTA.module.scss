@@ -2,6 +2,7 @@
   background-color: #2a5865;
   color: white;
   position: relative;
+  overflow: hidden;
   &-content {
     display: flex;
     flex-wrap: wrap;

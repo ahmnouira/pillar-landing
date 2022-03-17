@@ -113,6 +113,9 @@
   width: auto;
   border: none;
 
+  &.primary {
+    background-color: #00838f;
+  }
   &.tertiary {
     background: #613ced;
   }

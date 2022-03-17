@@ -18,8 +18,8 @@ const HowItWorks: React.FC = () => {
           <img src="/sponsor/warring.svg" />
           <h4>GP does not pass due diligence</h4>
           <p>
-            <span>Pillar works with GP</span> to shore up shortfailds by introducing third party service
-            provides and/or instituting asset management oversight
+            <span>Pillar works with GP</span> to shore up shortfalls by introducing third-party service
+            providers and/or instituting asset management oversight
           </p>
         </div>
         <div className={styles['how-it-works-cards-icon']}>
@@ -29,7 +29,7 @@ const HowItWorks: React.FC = () => {
           <img src="/sponsor/check-outline.svg" />
           <h4>GP passes due diligence</h4>
           <div className={styles['how-it-works-cards-large-row']}>
-            <p>Sponsor and Asset are onboarding onto platform</p>
+            <p>Sponsor and Asset are onboarded onto platform</p>
 
             <div className={styles['how-it-works-cards-large-row-icon']}>
               <img src="/sponsor/step.svg" />

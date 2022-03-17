@@ -28,6 +28,26 @@
       }
     }
   }
+
+  &-disclaimer {
+    display: flex;
+    border-top: 1px solid rgb(136, 140, 147);
+    border-bottom: 1px solid rgb(136, 140, 147);
+    margin: 40px;
+    // margin-top: 40px;
+    // margin-bottom: 40px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    font-size: 14px;
+    justify-content: left;
+    align-items: left;
+    color: gray;
+    text-align: left;
+    a {
+      text-decoration: underline;
+    }
+  }
+
   footer {
     padding: 10px;
     display: flex;
@@ -55,6 +75,12 @@
     padding: 24px;
     padding-top: 40px;
     padding-bottom: 60px;
+
+    &-disclaimer {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
     footer {
       flex-direction: column;
       a,

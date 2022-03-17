@@ -17,7 +17,7 @@ const Banner: React.FC<Props> = ({ imgSrc }) => {
           <h6>SOLUTIONS</h6>
         </div>
         <h1>Solve Your Capital Needs By Accessing Interim Liquidity & Retaining Control</h1>
-        <p>
+        <p className={`${styles['large']} large`}>
           The Pillar marketplace is designed to accommodate investor capital of varying time horizons and risk
           profiles, solving liquidity needs across the deal lifecycle.
         </p>
