@@ -1,20 +1,10 @@
-import { useMediaQuery } from '@mui/material';
 import styles from './HowItWorks.module.scss';
 
 const HowItWorks: React.FC = () => {
-  const matches = useMediaQuery('(max-width:600px)');
-
   return (
     <section className={styles['how-it-works']}>
-      {/* <h6>SPONSOR</h6> */}
-      <h3>How It Works</h3>
-
-      <div
-        className={styles['how-it-works-mobile']}
-        style={{ backgroundImage: `url(/sponsor/how-it-works.png)` }}
-      />
-
-      <small>Our process for owners of institutional-quality assets</small>
+      <h3>How it Works</h3>
+      <h6>Our process for owners of institutional-quality assets</h6>
       <p>
         Pillar underwrites the GP <span>to institutional standards</span>
       </p>

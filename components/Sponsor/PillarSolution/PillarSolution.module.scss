@@ -24,6 +24,8 @@
         display: none;
       }
       h3 {
+        min-height: 60px;
+        max-height: 120px;
         font-weight: 600;
         font-size: 24px;
         line-height: 30px;
@@ -78,6 +80,8 @@
         }
 
         h3 {
+          min-height: auto;
+          max-height: auto;
           font-size: 20px;
           line-height: 26px;
           // margin-bottom: 24px;

@@ -55,7 +55,7 @@ const About = () => {
   };
 
   return (
-    <section className={styles.about}>
+    <section id="about" className={styles.about}>
       <div className={styles['about-header']}>
         <h3>About Us</h3>
         <p>A top-tier team deeply experienced in real estate, startups, and technology.</p>
