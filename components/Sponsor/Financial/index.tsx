@@ -42,7 +42,7 @@ const Financial = () => {
               <div className={styles['financial-content-item']}>
                 {financial.icon}
                 <h2>{financial.title}</h2>
-                <p style={{ color: matches || index % 2 === 0 ? '#6E7176' : '#000' }}>{financial.content}</p>
+                <p>{financial.content}</p>
               </div>
             </Grid>
           ))}

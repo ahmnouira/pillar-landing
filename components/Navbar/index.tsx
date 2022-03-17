@@ -33,7 +33,7 @@ const Navbar: React.FC<NavbarProps> = ({
 
   const menus: Menu[] = [
     {
-      text: 'Solutions',
+      text: 'Sponsors',
       onClick: () => router.push('/sponsor'),
       path: '/sponsor',
     },
