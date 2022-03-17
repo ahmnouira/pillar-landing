@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Toast.module.scss';
 import SendOutlinedIcon from '@mui/icons-material/SendOutlined';
-import { Slide } from '@mui/material';
+import { Slide, useMediaQuery } from '@mui/material';
 
 type ToastProps = {
   open?: boolean;
@@ -10,8 +10,10 @@ type ToastProps = {
 };
 
 const Toast = ({ open, title, content }: ToastProps) => {
+  const matches = useMediaQuery('(max-width:912px)');
+
   return (
-    <Slide direction="left" in={open} mountOnEnter unmountOnExit>
+    <Slide direction={matches ? 'up' : 'left'} in={open} mountOnEnter unmountOnExit>
       <div className={styles.toast}>
         <div className={styles['toast-row']}>
           <div>
