@@ -23,6 +23,27 @@ a {
   }
 }
 
+// mui class
+.MuiInputBase-root {
+  color: white;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  border-color: #fff;
+}
+
+.MuiInput-root {
+  color: white;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  border-color: #fff;
+}
+
+.MuiInputBase-inputMultiline {
+  color: white !important;
+}
+
 @media screen and (max-width: 600px) {
   .padding-wrapper {
     padding: 24px;

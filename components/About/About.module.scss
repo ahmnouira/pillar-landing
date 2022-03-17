@@ -1,0 +1,108 @@
+.about {
+  background: #fafafa;
+  &-header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 72px 0px 24px;
+
+    h3 {
+      margin: 16px 0;
+    }
+    > p {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      color: #6e7176;
+    }
+  }
+
+  &-content {
+    padding: 40px 80px 80px;
+    .person-card {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      padding: 16px;
+      height: 100%;
+      background: #ffffff;
+      border: 1px solid #dbecee;
+      box-shadow: 0px 10px 24px rgba(0, 0, 0, 0.1);
+      border-radius: 2px;
+      transition: all 0.5s;
+      &-image {
+        width: 86px;
+        height: 86px;
+        object-fit: contain;
+        object-position: center;
+      }
+
+      &-content {
+        margin-left: 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        h4 {
+          margin-bottom: 10px;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 24px;
+        }
+        &-role {
+          background: #dbecee;
+          border-radius: 4px;
+          display: flex;
+          flex-direction: column;
+
+          padding: 2px 8px;
+          height: 20px;
+          min-height: 20px;
+          margin-bottom: 0.625rem;
+          p {
+            color: #00838f;
+            text-transform: capitalize;
+            font-size: 12px;
+            line-height: 16px;
+            height: 20px;
+          }
+        }
+        .description {
+          font-size: 14px;
+          line-height: 20px;
+        }
+        .show {
+          font-size: 14px;
+          line-height: 20px;
+          color: #00838f;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .about {
+    background: #fff;
+    padding-bottom: 40px;
+    &-header {
+      margin: 16px;
+      padding: 0;
+      align-items: flex-start;
+      justify-content: flex-start;
+
+      h3 {
+        margin: 16px 0;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 30px;
+      }
+    }
+
+    &-content {
+      padding: 0 24px;
+    }
+  }
+}

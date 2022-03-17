@@ -8,15 +8,17 @@ import Link from 'next/link';
 import SecurityIcon from '@mui/icons-material/Security';
 import LockIcon from '@mui/icons-material/Lock';
 import TextSnippetIcon from '@mui/icons-material/TextSnippet';
-import { ListItemIcon } from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
+import { IconButton, ListItemIcon } from '@mui/material';
+
 import { handleMoveToId } from 'utils';
 import { useRouter } from 'next/router';
 
 const options = [
   { title: 'Get Started' },
-  { title: 'Terms of Service', link: '/terms-of-service' },
-  { title: 'Privacy and Cookies', link: '/privacy-and-cookies' },
-  { title: 'Confidentiality agreement', link: '/confidentiality-agreement' },
+  { title: 'Solutions', link: '/sponsor' },
+  { title: 'About us', link: '/?about=true' },
+  { title: 'Careers', link: '/career' },
 ];
 
 const Sidebar: React.FC<any> = ({ setOpen, open }) => {
@@ -27,18 +29,28 @@ const Sidebar: React.FC<any> = ({ setOpen, open }) => {
   };
 
   const list = () => (
-    <Box sx={{ width: 250 }} role="presentation" onClick={setOpen} onKeyDown={setOpen}>
-      <List></List>
+    <Box sx={{ width: 250 }} role="presentation">
+      <div
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'flex-end',
+          width: '100%',
+          display: 'flex',
+        }}>
+        <IconButton onClick={setOpen}>
+          <CloseIcon htmlColor="black" />
+        </IconButton>
+      </div>
       <List>
         {options.map((option, index) => (
           <ListItem button key={index}>
-            <ListItemIcon>
+            {/* <ListItemIcon>
               <>
                 {index === 1 && <TextSnippetIcon />}
                 {index === 2 && <SecurityIcon />}
                 {index === 3 && <LockIcon />}
               </>
-            </ListItemIcon>
+            </ListItemIcon> */}
             <ListItemText>
               {option.link ? (
                 <Link href={option.link}>

@@ -17,7 +17,6 @@
       transform: none;
       margin-left: 10px;
       margin-bottom: 4px;
-      // cursor: pointer;
       margin-right: 2px;
       border-radius: 4px;
       background: black;
@@ -39,13 +38,16 @@
           }
         }
       }
+
       &-content {
         position: relative;
         background: black;
+        border-radius: 4px;
       }
       &-image {
         width: 100%;
         z-index: -1;
+        border-radius: 4px;
       }
       &-text {
         padding: min(32px, 1rem);

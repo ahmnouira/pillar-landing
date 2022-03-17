@@ -6,20 +6,26 @@ import { useEffect } from 'react';
 import CTA from 'components/CTA';
 import { useRouter } from 'next/router';
 import { handleMoveToId } from 'utils';
+import About from 'components/About';
 
 const Home: NextPage = () => {
   const router = useRouter();
 
   useEffect(() => {
     if (router.query.cta) {
-      handleMoveToId();
-    }
+      handleMoveToId('cta');
+    } else if (router.query.about) handleMoveToId('about');
   }, [router]);
 
   return (
-    <MainLayout>
+    <MainLayout
+      navbarProps={{
+        logoColor: 'white',
+        home: true,
+      }}>
       <Banner imgSrc="/hero.jpg" />
       <Pillars />
+      <About />
       <CTA />
     </MainLayout>
   );

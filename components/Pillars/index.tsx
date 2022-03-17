@@ -1,4 +1,5 @@
 import { Grid } from '@mui/material';
+import { useRouter } from 'next/router';
 import PillarCard from './components/PillarCard';
 import styles from './Pillar.module.scss';
 
@@ -7,6 +8,7 @@ interface iPillarCards {
   subtitle: string;
   description: string;
   image: string;
+  path?: string;
 }
 
 const pillarCardsContent: iPillarCards[] = [
@@ -37,25 +39,39 @@ const pillarCardsContent: iPillarCards[] = [
     subtitle: 'From Acquisition to Recapitalization',
     description:
       'A marketplace to accommodate investor capital of varying time horizons, solving the liquidity needs of both investors and sponsors.',
+    path: '/sponsor',
   },
 ];
 
 const Pillars = () => {
+  const router = useRouter();
+
+  const handleNavigate = () => {
+    router.push('/sponsor');
+  };
+
   return (
     <section className={styles.pillars}>
       <h3>Our Pillars</h3>
       <div className={styles['pillars-content']}>
-        {pillarCardsContent.map(({ title, subtitle, description, image }, index) => (
-          <Grid item xs={12} sm={6} lg={3} key={index}>
-            <PillarCard
-              title={title}
-              subtitle={subtitle}
-              description={description}
-              imageSrc={image}
-              styles={styles}
-            />
-          </Grid>
-        ))}
+        {pillarCardsContent.map(({ title, subtitle, description, image, path }, index) => {
+          const isLast = index === pillarCardsContent.length - 1;
+          return (
+            <Grid item xs={12} sm={6} lg={3} key={index}>
+              <div
+                onClick={isLast ? handleNavigate : undefined}
+                style={{ cursor: isLast ? 'pointer' : 'default' }}>
+                <PillarCard
+                  title={title}
+                  subtitle={subtitle}
+                  description={description}
+                  imageSrc={image}
+                  styles={styles}
+                />
+              </div>
+            </Grid>
+          );
+        })}
       </div>
     </section>
   );
