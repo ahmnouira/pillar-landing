@@ -64,7 +64,7 @@
         padding: 16px;
         margin-top: 48px;
         width: 345px;
-        overflow: auto;
+        overflow: hidden;
         height: 92px;
         span {
           font-weight: 600;
@@ -100,7 +100,7 @@
         align-items: center;
 
         p {
-          overflow: auto;
+          overflow: hidden;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -111,6 +111,7 @@
           background: #dbecee;
           border-radius: 8px;
           height: 92px;
+          width: 33%;
         }
         &-icon {
           margin: 0px 20px;
@@ -121,7 +122,8 @@
   }
 }
 
-@media screen and (max-width: 1440px) {
+// tablets
+@media screen and (max-width: 1480px) {
   .how-it-works {
     background: #fafafa;
     padding: 0;
@@ -170,11 +172,10 @@
 
       &-icon {
         margin: 16px 0px;
+        transform: rotate(90deg);
       }
-
       &-large {
         padding: 24px;
-
         h4 {
           font-weight: 500;
           font-size: 20px;
@@ -183,22 +184,37 @@
         &-row {
           margin: 0px;
           margin-top: 32px;
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-start;
           width: 100%;
           p {
             margin: 0px;
             padding: 16px;
-            width: 100%;
+            width: 33%;
             font-weight: 400;
             font-size: 14px;
             line-height: 20px;
-            height: auto;
             text-align: left;
           }
           &-icon {
+            margin: 0px 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  .how-it-works {
+    &-cards {
+      &-large {
+        &-row {
+          flex-direction: column;
+          p {
+            width: 100%;
+          }
+          &-icon {
             margin: 20px 0px;
+            transform: rotate(90deg);
           }
         }
       }
