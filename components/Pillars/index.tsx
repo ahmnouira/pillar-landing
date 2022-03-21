@@ -60,7 +60,7 @@ const Pillars = () => {
             <Grid item xs={12} sm={6} lg={3} key={index}>
               <div
                 onClick={isLast ? handleNavigate : undefined}
-                style={{ cursor: isLast ? 'pointer' : 'default' }}>
+                style={{ cursor: isLast ? 'pointer' : 'default', width: '100%' }}>
                 <PillarCard
                   title={title}
                   subtitle={subtitle}
