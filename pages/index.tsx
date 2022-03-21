@@ -12,12 +12,17 @@ const Home: NextPage = () => {
   const router = useRouter();
 
   useEffect(() => {
-    console.log('query', router.query);
-    if (router.query.cta) {
-      handleMoveToId('cta');
-    } else if (router.query['about-us']) {
-      handleMoveToId('about-us');
-    }
+    const timeout = setTimeout(() => {
+      if (router.query.cta) {
+        handleMoveToId('cta');
+      } else if (router.query['about-us']) {
+        handleMoveToId('about-us');
+      }
+    }, 200);
+
+    return () => {
+      clearTimeout(timeout);
+    };
   }, [router.query]);
 
   return (
