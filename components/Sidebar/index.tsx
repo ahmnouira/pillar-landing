@@ -17,7 +17,7 @@ import { useRouter } from 'next/router';
 const options = [
   { title: 'Get Started' },
   { title: 'Sponsors', link: '/sponsor' },
-  { title: 'About us', link: '/?about=true' },
+  { title: 'About us', link: '/?about-us=true' },
   { title: 'Careers', link: '/career' },
 ];
 
@@ -26,6 +26,11 @@ const Sidebar: React.FC<any> = ({ setOpen, open }) => {
   const handleButtonClick = () => {
     router.pathname !== '/' && router.push('/?cta=true');
     router.pathname === '/' && handleMoveToId();
+  };
+
+  const handleAboutUsClick = () => {
+    router.pathname !== '/' && router.push('/?about-us=true');
+    router.pathname === '/' && handleMoveToId('about-us');
   };
 
   const list = () => (
@@ -54,7 +59,7 @@ const Sidebar: React.FC<any> = ({ setOpen, open }) => {
             <ListItemText>
               {option.link ? (
                 <Link href={option.link}>
-                  <a>{option.title}</a>
+                  <a onClick={option.title === 'About us' ? handleAboutUsClick : undefined}>{option.title}</a>
                 </Link>
               ) : (
                 <a onClick={handleButtonClick}>{option.title}</a>

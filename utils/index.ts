@@ -1,9 +1,9 @@
 import { scroller } from 'react-scroll';
 
-export const handleMoveToId = (id: string = 'cta') => {
+export const handleMoveToId = (id: string = 'cta', offset: number = -85) => {
   scroller.scrollTo(id, {
     smooth: true,
-    offset: -85,
+    offset,
     duration: 200,
     delay: 0,
   });

@@ -12,10 +12,13 @@ const Home: NextPage = () => {
   const router = useRouter();
 
   useEffect(() => {
+    console.log('query', router.query);
     if (router.query.cta) {
       handleMoveToId('cta');
-    } else if (router.query.about) handleMoveToId('about');
-  }, [router]);
+    } else if (router.query['about-us']) {
+      handleMoveToId('about-us');
+    }
+  }, [router.query]);
 
   return (
     <MainLayout

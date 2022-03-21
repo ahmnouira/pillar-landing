@@ -39,8 +39,7 @@ const Navbar: React.FC<NavbarProps> = ({
     },
     {
       text: 'About us',
-      onClick: () => handleAboutUsClick(),
-      path: '/?about=true',
+      path: '/?about-us=true',
     },
     {
       text: 'Careers',
@@ -56,16 +55,6 @@ const Navbar: React.FC<NavbarProps> = ({
       path: '/?cta=true',
     },
   ];
-
-  const handleAboutUsClick = () => {
-    router.pathname !== '/' && router.push('/?about=true');
-    router.pathname === '/' && handleMoveToId('about');
-  };
-
-  const handleButtonClick = () => {
-    router.pathname !== '/' && router.push('/?cta=true');
-    router.pathname === '/' && handleMoveToId();
-  };
 
   const [activeLogoColor, setActiveLogoColor] = useState('');
 
