@@ -54,24 +54,26 @@ const Pillars = () => {
     <section className={styles.pillars}>
       <h3>Our Pillars</h3>
       <div className={styles['pillars-content']}>
-        {pillarCardsContent.map(({ title, subtitle, description, image, path }, index) => {
-          const isLast = index === pillarCardsContent.length - 1;
-          return (
-            <Grid item xs={12} sm={6} lg={3} key={index}>
-              <div
-                onClick={isLast ? handleNavigate : undefined}
-                style={{ cursor: isLast ? 'pointer' : 'default', width: '100%' }}>
-                <PillarCard
-                  title={title}
-                  subtitle={subtitle}
-                  description={description}
-                  imageSrc={image}
-                  styles={styles}
-                />
-              </div>
-            </Grid>
-          );
-        })}
+        <Grid container>
+          {pillarCardsContent.map(({ title, subtitle, description, image, path }, index) => {
+            const isLast = index === pillarCardsContent.length - 1;
+            return (
+              <Grid item xs={12} sm={6} lg={3} key={index}>
+                <div
+                  onClick={isLast ? handleNavigate : undefined}
+                  style={{ cursor: isLast ? 'pointer' : 'default', width: '100%' }}>
+                  <PillarCard
+                    title={title}
+                    subtitle={subtitle}
+                    description={description}
+                    imageSrc={image}
+                    styles={styles}
+                  />
+                </div>
+              </Grid>
+            );
+          })}
+        </Grid>
       </div>
     </section>
   );
